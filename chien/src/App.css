@@ -1,0 +1,244 @@
+*,*::before,*::after{
+box-sizing: border-box;
+
+}
+body {
+    background-color: white;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 0%;
+    padding: 0%;
+    
+  }
+  .navbar{
+    background-color: transparent;
+    padding: 0 !important;
+  }
+  .navbar.colorChange{
+    background-color: #cc884c;
+    padding: 0% !important;
+    height: 30%;
+  }
+
+  .fixed-top {
+    position: fixed;
+    top: -70px !important;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+/* .text1{
+    position: absolute;
+    margin-top: -46%;
+    margin-left: -17%;
+    font-size: 100px;
+    color: white;
+    font-family: 'Teko', sans-serif;
+    font-weight: lighter;
+} */
+.logo{
+    width: 188px;
+    height: 184px;
+}
+.dogs-img{
+    width: 100%;
+    height: 100vh;
+
+}
+  .nav-link {
+    color: white !important;
+    font-weight: bold;
+    font-size: 23px;
+}
+.nav-link {
+    padding-right: 6.5rem;
+    padding-left: .5rem;
+}
+.histoire{
+    margin-top: 11% !important;
+}
+.img-hist{
+    height: 80%;
+
+}
+.titre-txt{
+    font-size: 56px;
+    color: #f6ab4a;
+    font-family: 'Merriweather', serif  ;
+    font-weight: bold;
+}
+.hist-txt{
+    font-size: 20px;
+    color: #787878;
+    font-family: 'Merriweather', serif  ;
+    font-weight: bold;
+}
+
+#more {display: none;}
+/* .logo-hr{
+    width: 100px;
+    height: 100px;
+} */
+.srve{
+    height: 355px;
+    width: 300px;
+    margin-left: -10%
+}
+.sr1{
+    padding-top: 25%;
+    margin-left: 33%;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Merriweather', serif ;
+    color: #787878;
+}
+.sr1:hover{
+    color: #f6ab4a;
+}
+.sr2{
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Merriweather', serif ;
+    color: #787878;
+    padding-top: 22%;
+}
+
+.sr2:hover{
+    color: #f6ab4a;
+}
+/* .srvs span:first-of-type{
+    height: 5px;
+    width: 20%;
+    background-color: red;
+}
+
+.f{
+    width: 100px;
+    height: 100px;
+} */
+.ic-sr{
+    background-color: #f6ab4a;
+    border-radius:50%;
+}
+
+
+   
+  .read-or-hide{
+    color: rgb(192,192,192);
+    cursor: pointer;
+  }
+
+ .img-cr{
+    width: 200px;
+    height: 200px;
+    padding-top: 5%;
+    
+ }
+ .card{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: transparent !important;
+   
+ }
+ .cr-bg{
+   background-image: url('./images/3.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position:center ;
+   background-color: transparent;
+   background-attachment: fixed;
+
+ }
+ .text-cr{
+     padding-top: 100px;
+     color: white;
+
+ }
+ .footer{
+     background-color:#362526;
+     
+ }
+.f-link{
+    margin-top: 53%;
+ 
+}
+.f-map{
+    margin-top: 28%;
+}
+.f-icone{
+    margin-top: 50%;
+    color: white;
+    font-family: 'Merriweather', serif ;
+}
+.f-txt{
+    color: white;
+    font-size: 16px;
+     font-family: 'Merriweather', serif ;
+}
+.video{
+    filter: brightness(40%);
+    z-index: -1;
+}
+.text1{
+    margin-top: -36%;
+    position: absolute;
+    font-size: 40px;
+    color: #f6ab4a;
+    font-weight:bold;
+    font-family: 'Merriweather', serif ;
+    margin-left: 23%;
+    text-align: center;
+     
+   
+}
+.buton{
+    font-size: 25px;
+    color: white;
+    font-weight:bolder;
+    font-family: 'Merriweather', serif ;
+    background-color:#362526 ;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 5%;
+
+}
+.buton:hover{
+    background-color:#f6ab4a ;
+}
+
+.custom-shape-divider-1629105395 {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-1629105395 svg {
+    position: absolute;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 500px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-1629105395 .shape-fill {
+    fill: #CD6133;
+}
+
+.dash{
+    background-color: #d1ccc0;
+    text-align: center;
+    
+}
+.side{
+    background-color: red;
+    height: 100%;
+    position: fixed;
+    width: 20%;
+}
