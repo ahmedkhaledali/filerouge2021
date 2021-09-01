@@ -17,7 +17,7 @@ export function getchien() {
 
 export const addChien=(nom,model,taille,critére,age,image,vaccin,date)=> async (dispatch) =>{
     try{
-        const res=await fetchAddChien ({nom,model,taille,critére,age,image,vaccin,date});
+        const res=await fetchAddChien (nom,model,taille,critére,age,image,vaccin,date);
         dispatch ({
             type:"ADD_CHIEN_SUCCED",
             payload:res.data

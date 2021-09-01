@@ -6,6 +6,7 @@ import Center from '../Composent/center'
 import Service from '../Composent/service';
 import Temoi from '../Composent/temoi'
 import Footer from '../Composent/footer';
+import Chiens from '../Composent/chien';
 function Acceuil() {
   return (
     <div >
@@ -16,6 +17,7 @@ function Acceuil() {
       <Center />
       <Service />
       <Temoi />
+      <Chiens />
       <Footer />
     </div>
   );

@@ -29,6 +29,7 @@ const [Input,setInput] = useState(
       model : "", 
       vaccin:"",
       taille : "",
+      critére:"",
       age :"",
       image : "",
       date : ""
@@ -45,7 +46,7 @@ const [Input,setInput] = useState(
   //add 
   const HandelSubmit=(e)=>{
     e.preventDefault()
-     dispatch( addChien(Input.nom,Input.model,Input.vaccin,Input.taille,Input.age,Input.image,Input.date))
+     dispatch( addChien(Input.nom,Input.model,Input.vaccin,Input.taille,Input.age,Input.image,Input.date,Input.critére))
     
      console.log('val input', Input)
    }
@@ -143,7 +144,7 @@ const [Input,setInput] = useState(
     <Form.Check type="checkbox" label="Protecteur" />
     </Col>
     </Row> */}
-    <Form.Control type="text" placeholder="Enter la Critére de chien " onChange={HandelChange}/>
+    <Form.Control type="text" placeholder="Enter la Critére de chien " name="critére" onChange={HandelChange}/>
   </Form.Group>
 
   <Button variant="primary" type="submit">
@@ -162,7 +163,7 @@ const [Input,setInput] = useState(
         </Modal.Footer>
       </Modal>
 
-  );
+  
 
 </div>
     )

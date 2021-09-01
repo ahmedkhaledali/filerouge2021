@@ -5,7 +5,7 @@ function SimpleMap (){
     return (
         <div class="mapouter">
             <div class="gmap_canvas">
-                <iframe width="400" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=El%20Omrane%20sup%C3%A9rieur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                <iframe width="100%" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=El%20Omrane%20sup%C3%A9rieur&t=&z=13&ie=UTF8&iwloc=&output=embed"
                  frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                      </iframe>
                      <a href="https://123movies-to.org/%22%3E"></a><br />

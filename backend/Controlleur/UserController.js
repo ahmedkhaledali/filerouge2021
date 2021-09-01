@@ -1,56 +1,63 @@
-const user1 =require('../Models/UserModel')
-module.exports={
-postuser: async (req, res) => {
-        const nom = req.body.nom;
-        const prenom = req.body.prenom;
-        const email = req.body.email;
-        const adress = req.body.adress;
-        const motpass = req.body.motpass;
-    
-        try {
-          users = new user1({
-            nom,
-            prenom,
-            email,
-            adress,
-            motpass,
-            image
+const USER = require('../Models/UserModel')
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken');
+ module.exports={
+register:async(req,res)=>{
+USER.findOne({email:req.body.email})
+.exec((error,user)=>{
+    if(user) return  res.status(400).json({
+        message:'Email already been used'
+    });
+    const salt = genSaltSync(10)
+     const hashedPassword =  bcrypt.hashSync(req.body.password, salt);
+     const password = hashedPassword;
+    const fullName = req.body.fullName
+    const adress=req.body.adress
+    const email = req.body.email
+    const phone = req.body.phone
+
+    const _user = new USER({
+        fullName,
+        email,phone,password,adress
+    })
+
+    _user.save((error,data) =>{
+        if(error){
+            return res.status(400).json({
+                message:'Somthing went wrong!'
+            })
+        }
+        if(data){
+            return res.status(201).json({
+                message:'User created Successfuly..!'  ,
+            data          })
+
+        }
+    })
+});
+
+}, 
+signIn : (req, res) => {
+    USER.findOne({ email: req.body.email }).exec(async (error, user) => {
+      if (error) return res.status(400).json({ error });
+      if (user) {
+        const isPassword = await bcrypt.compare(req.body.password,user.password);
+        if (isPassword ) {
+            const token = jwt.sign({_id:user._id,role:user.role,fullName:user.fullName,adress:user.adress,email:user.email,phone:user.phone},'MEARNSECRET',{expiresIn:'1h'})
+            res.status(200).json({
+            token 
           });
-          await users.save();
-          res.json(users);
-        } catch (error) {
-          console.error(error.message);
+        } else {
+          return res.status(400).json({
+            message: "Invalid password !",
+          });
         }
-      },
-      getuser: async (req, res) => {
-        try {
-          const user = await user1.find();
-          res.json(user);
-        } catch (error) {
-          console.error(error.message);
-        }
-      },
-      suppuser: async (req, res) => {
-        try {
-          const user = await user1.findByIdAndDelete(req.params.id);
-          res.json(user);
-        } catch (error) {
-          console.error(error.message);
-        }
-      },
-      putuser: async (req, res) => {
-        try {
-          const user = await user1.findByIdAndUpdate(
-            req.params.id,
-            req.body,
-            { new: true }
-          );
-          res.json(user);
-        } catch (error) {
-          console.error(error.message);
-        }
+      } else {
+        return res.status(400).json({ message: "Something went wrong" });
       }
-    };
-    
+    });
+  }
 
+ 
 
+}

@@ -1,17 +1,55 @@
 import "react-bootstrap";
 import "../App.css";
-import chien from '../images/post-15.jpg'
+import chien from '../images/15.jpg'
 import Image from 'react-bootstrap/Image'
+import { Container,Row,Col } from "react-bootstrap";
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import FloatingLabel from 'react-bootstrap/FloatingLabel'
+
 
 
 function Forme() {
+  
   return (
-    
-<div class="custom-shape-divider-1629105395 ">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-    </svg>
-    <Image src={chien} alt='' />
+   
+
+<div className="section">
+<Container>
+<Row>
+  <Col>
+  <p className="texte">
+  <span className="contact">En savoir plus sur nous</span> <br/>
+Tzul est la première plateforme tunisienne de conseils mettant en relation les propriétaires d'animaux et les vétérinaires.
+Notre objectif est celui de vous simplifier la vie en vous aidant à prendre soin de vos animaux et garantir leur bien être à travers un accès rapide aux services vétérinaires et produits d'animalerie.
+Cette plateforme ne pourra en aucun cas remplacer votre vétérinaire.
+  </p>
+ 
+ <Image src={chien} alt=""    data-aos="fade-down" style={{width : "100%", height : "50%" , borderRadius:"10px"}} />
+  </Col>
+<Col className="forme">
+  <p className="tt1">N'hésitez pas à nous demander quoi que ce soit.</p>
+<Form  className="forme1">
+  <Form.Group className="mb-3" controlId="formBasicNom">
+    <Form.Control type="mail" placeholder="Enter ton mail" name="mail" />
+  </Form.Group>
+  <FloatingLabel controlId="floatingTextarea2">
+    <Form.Control
+      as="textarea"
+      placeholder="Leave a comment here"
+      style={{ height: '100px' }}
+    />
+  </FloatingLabel>
+  <button type="submit" id="submit-bbt">
+    Submit
+  </button>
+  </Form>
+</Col>
+
+</Row>
+
+</Container>
+
 </div>
 
   );

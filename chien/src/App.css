@@ -17,8 +17,33 @@ body {
   .navbar.colorChange{
     background-color: #cc884c;
     padding: 0% !important;
-    height: 30%;
+    height: 10%; 
+    margin-top: 5%;
   }
+
+  .navbar1{
+    background-color:#362526 ;
+    padding: 0 !important;
+  }
+  .navbar1.colorChange{
+    background-color: #cc884c;
+    padding: 0% !important;
+    height: 10%; 
+    margin-top: 5%;
+  }
+
+  #navbar1{
+    background-color:#362526 ;
+    padding: 0 !important;
+  }
+  #navbar1.colorChange{
+    background-color: #cc884c;
+    padding: 0% !important;
+    height: 10%; 
+    margin-top: 5%;
+  }
+
+
 
   .fixed-top {
     position: fixed;
@@ -27,6 +52,7 @@ body {
     left: 0;
     z-index: 1030;
 }
+
 
 /* .text1{
     position: absolute;
@@ -38,9 +64,13 @@ body {
     font-weight: lighter;
 } */
 .logo{
+    display: block;
     width: 188px;
     height: 184px;
 }
+.logo.logoChange{
+    display: none;
+  }
 .dogs-img{
     width: 100%;
     height: 100vh;
@@ -81,16 +111,18 @@ body {
     height: 100px;
 } */
 .srve{
-    height: 355px;
-    width: 300px;
-    margin-left: -10%
+   
+    height: 401px;
+    width: 375px;
+    margin-left: 10%;
+
 }
 .sr1{
     padding-top: 25%;
     margin-left: 33%;
     font-weight: bold;
     font-size: 40px;
-    font-family: 'Merriweather', serif ;
+    font-family: 'Mefrriweather', serif ;
     color: #787878;
 }
 .sr1:hover{
@@ -135,28 +167,60 @@ body {
     padding-top: 5%;
     
  }
- .card{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   background-color: transparent !important;
-   
- }
+
  .cr-bg{
-   background-image: url('./images/3.jpg');
-   background-repeat: no-repeat;
-   background-size: cover;
+   background-image: url('./images/bg.jpg');
+   background-repeat: no-repeat;   
    background-position:center ;
-   background-color: transparent;
-   background-attachment: fixed;
+   height: 100%;
 
  }
+ .crl{
+
+    margin-top: 5%;
+height: 139px;
+    width: 270px;
+    box-shadow:
+  0 11.4px 3.6px rgba(0, 0, 0, 0.243),
+  0 21.7px 10px rgba(0, 0, 0, 0.251),
+  0 33.9px 24.1px rgba(0, 0, 0, 0.252),
+  0 100px 80px rgba(0, 0, 0, 0.25)
+;
+
+ }
+ .card1{
+     width: 100%;
+ }
+.card-txt{
+    color: #f7f3e7;
+    font-size: 15px;
+font-weight: bolder;
+    font-family: 'Merriweather', serif ;
+}
+ /* .card1:hover{
+    background-color: #f6ab4a;
+ } */
+ .temo{
+     margin-top: 0%;
+ }
+ 
+ 
  .text-cr{
      padding-top: 100px;
      color: white;
 
  }
+.model{
+    width: 218px;
+    height: 240px;
+    margin-top: 18%;
+
+}
+.model:hover{
+    opacity: 0.3;
+    
+}
+
  .footer{
      background-color:#362526;
      
@@ -169,14 +233,105 @@ body {
     margin-top: 28%;
 }
 .f-icone{
-    margin-top: 50%;
-    color: white;
-    font-family: 'Merriweather', serif ;
+    margin-top: 12%;
+    color: #e7e7e7;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
 }
+
+.foot-x{
+
+    color: #f6ab4a;
+    margin-top: 21%;
+    margin-left: 5%;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+
+.foot-xt{
+    color: #f6ab4a;
+    margin-top: 13%;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;    
+}
+.foot-p{
+    color: #f6ab4a;
+    margin-top: 20%;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
 .f-txt{
+    color:#e7e7e7;
+    margin-top: 15%;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    width: 100%;
+}
+.foot-txt{
+    color: #f6ab4a;
+    margin-top: 20%;
+    margin-left: 20%;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    
+}
+
+.tbn{
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: #e7e7e7;
+    margin-top: 9%;
+    border-radius: 30px;
+    width: 100%;
+    background-color: #f6ab4a;;
+}
+.ipt{
+    border-radius: 30px;
+    width: 100%;
+    background-color: transparent;
+    border:solid;
+    border-color: wheat;
+
+}
+#i-login{
     color: white;
-    font-size: 16px;
-     font-family: 'Merriweather', serif ;
+    margin-left: -80%;
+    margin-top: 25%;
+}
+#f-f{
+    margin-top: 14%;
+}
+ion-icon{
+    color:  #f6ab4a;
+    font-size: 27px;
+}
+.mail{
+    margin-top: -30px;
+    margin-bottom: 1rem;
+    margin-left: 12%;
 }
 .video{
     filter: brightness(40%);
@@ -209,27 +364,6 @@ body {
     background-color:#f6ab4a ;
 }
 
-.custom-shape-divider-1629105395 {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-
-.custom-shape-divider-1629105395 svg {
-    position: absolute;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 500px;
-    transform: rotateY(180deg);
-}
-
-.custom-shape-divider-1629105395 .shape-fill {
-    fill: #CD6133;
-}
 
 .dash{
     background-color: #d1ccc0;
@@ -241,4 +375,61 @@ body {
     height: 100%;
     position: fixed;
     width: 20%;
+}
+.section{
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+.forme{
+    background-color: #f6ab4a;
+}
+.contact{    
+    font-size: 45px;
+    color: #f6ab4a;
+    font-weight:bolder;
+    font-family: 'Merriweather', serif ;
+    text-align: center;
+}
+.texte{
+    font-size: 20px;
+    color: #787878;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+.forme1{
+    margin-top: 8%;
+}
+.tt1{
+    font-size: 35px;
+    color: #787878;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10%;
+}
+#submit-bbt{
+
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    background-color: #362526;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 5%;
+    width: 100%;
+}
+#submit-bbt:hover{
+    background-color:#787878;
+}
+.Nservice{
+    margin-top: 10%;
+    font-size: 56px;
+    color: #f6ab4a;
+    font-family: 'Merriweather', serif  ;
+    font-weight: bold;
+    text-align: center;
+}
+.gga{
+    margin-top: 15%;
 }

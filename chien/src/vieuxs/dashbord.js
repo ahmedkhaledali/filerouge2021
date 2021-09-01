@@ -15,7 +15,7 @@ import {getchien} from "../action/chienaction"
 import {useEffect,useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
-function Dashborad() {
+function Dashborad  () {
 
 //getchien
   const chien = useSelector(state=>state.chienstore)
@@ -25,8 +25,10 @@ useEffect(() => {
  },[]);
  console.log(chien, "did we ?");
 
+
   return (
     <div >
+      
       <Topnav/>
 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
   <Row>
@@ -43,6 +45,9 @@ useEffect(() => {
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="fourth">Notre Utilisateurs</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="fivth">Notre entreneurs </Nav.Link>
         </Nav.Item>
       </Nav>
     </Col>
@@ -81,6 +86,9 @@ useEffect(() => {
           <Footer/>
         </Tab.Pane>
         <Tab.Pane eventKey="fourth">
+          <Footer/>
+        </Tab.Pane>
+        <Tab.Pane eventKey="fivth">
           <Footer/>
         </Tab.Pane>
       </Tab.Content>

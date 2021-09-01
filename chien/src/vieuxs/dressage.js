@@ -1,14 +1,15 @@
 
-import  Navbare from '../Composent/Navbar';
+
 import Footer from '../Composent/footer';
 import Image from 'react-bootstrap/Image'
 import Image1 from '../images/1.jpg'
 import Modaldressage from '../Composent/modalchien'
+import Navbare1 from '../Composent/Navbar1';
 function Dressage() {
   return (
     <div >
       
-      <Navbare />
+      <Navbare1 />
       
       <div class="container-fluid">
         <div class="row">
