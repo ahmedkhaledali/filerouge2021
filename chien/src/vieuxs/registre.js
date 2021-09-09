@@ -45,7 +45,7 @@ const RegisterUserForm = (props) => {
     };
 
  if(auth.authenticate){
-   return <Redirect to={``} />
+   return <Redirect to={`/connexion`} />
  }
  
  if (user.loading) {

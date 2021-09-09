@@ -1,26 +1,26 @@
-const chien =  {
-    datas : []
+const contact =  {
+    datacontact : []
 
   }
 
-export  const ChienReducer = (state = chien, action ) => {
+export  const ContactReducer = (state = contact, action ) => {
     const {type,payload}= action;
     switch(action.type) {
-        case   "GET_CHIEN_SUCCEDED":
+        case   "GET_CONTACT_SUCCEDED":
             return {
                 ...state,
-                datas: payload
+                datacontact: payload
               
               };
-              case  "ADD_CHIEN_API":
+              case  "ADD_CONTACT_API":
                 return{
                     ...state,
-                    datas:[ ...state.datas, payload]
+                    datacontact:[ ...state.datas, payload]
                 }
-                case "DELETE_CHIEN_API":
+                case "DELETE_CONTACT_API":
                   return {
                     ...state,
-                    datas: state.datas.filter(
+                    datacontact: state.datacontact.filter(
                       data => data._id !== payload
                     )
                     };

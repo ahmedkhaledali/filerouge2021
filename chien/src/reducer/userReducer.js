@@ -3,6 +3,8 @@ const initState = {
     message: '',
     loading: false
 }
+
+
 export const UserRegisterReducer = (state = initState, action) => {
     switch(action.type){
         case "USER_REGISTER_REQUEST":

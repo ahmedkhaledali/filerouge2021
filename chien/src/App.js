@@ -17,6 +17,8 @@ import {useEffect} from 'react'
 import AOS from 'aos';
 import {useSelector,useDispatch} from 'react-redux'
 import {isUserLoggedIn} from './action/auth'
+import Foyer from './vieuxs/foyer';
+import Race from './vieuxs/race';
 
 function App() {
 
@@ -27,7 +29,11 @@ function App() {
       dispatch(isUserLoggedIn())
     }
   } ,[])
- 
+  useEffect(() => {
+    AOS.init({
+      duration : 2000
+    });
+  }, []);
 
 
   return (
@@ -43,6 +49,8 @@ function App() {
         <Route exact path="/connexion">< LoginForm/></Route>
         <Route exact path="/register">< RegisterUserForm/></Route>
         <Route exact path="/profil"><UserProfil/></Route>
+        <Route exact path="/foyer"><Foyer/></Route>
+        <Route exact path="/race"><Race/></Route>
        
         
       </Switch>

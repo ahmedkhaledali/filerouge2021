@@ -6,11 +6,39 @@ import { Container,Row,Col } from "react-bootstrap";
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import FloatingLabel from 'react-bootstrap/FloatingLabel'
+import {addContact} from '../action/contactaction'
+import { useDispatch} from 'react-redux'
+import {useEffect,useState} from 'react';
 
+function Formecontact() {
 
-
-function Forme() {
   
+// récupération val input
+
+const [Input,setInput] = useState(
+  {
+    mail : "", 
+    commentaire : "" 
+    
+  }
+)
+const dispatch = useDispatch()
+
+//////////////
+  const HandelChange=(e)=>{
+      const {name,value}= e.target 
+      setInput({ ...Input,  [name]: value});
+      }
+
+//add 
+const HandelSubmit=(e)=>{
+  e.preventDefault()
+   dispatch( addContact (Input.mail,Input.commentaire))
+  
+   console.log('val input', Input)
+ }
+
+
   return (
    
 
@@ -29,15 +57,18 @@ Cette plateforme ne pourra en aucun cas remplacer votre vétérinaire.
   </Col>
 <Col className="forme">
   <p className="tt1">N'hésitez pas à nous demander quoi que ce soit.</p>
-<Form  className="forme1">
+<Form onSubmit={HandelSubmit} className="forme1">
   <Form.Group className="mb-3" controlId="formBasicNom">
-    <Form.Control type="mail" placeholder="Enter ton mail" name="mail" />
+    <Form.Control type="mail" placeholder="Enter ton mail" name="mail" onChange={HandelChange}/>
   </Form.Group>
+
   <FloatingLabel controlId="floatingTextarea2">
     <Form.Control
       as="textarea"
-      placeholder="Leave a comment here"
+      placeholder="Leave a comment here" 
       style={{ height: '100px' }}
+      name="commentaire"
+      onChange={HandelChange}
     />
   </FloatingLabel>
   <button type="submit" id="submit-bbt">
@@ -55,4 +86,4 @@ Cette plateforme ne pourra en aucun cas remplacer votre vétérinaire.
   );
 }
 
-export default Forme;
+export default Formecontact;

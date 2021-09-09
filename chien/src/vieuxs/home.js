@@ -14,7 +14,7 @@ const LoginForm = (props) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
-  const auth = useSelector(state =>state.data)
+  const auth = useSelector(state =>state.userlog)
   const dispatch = useDispatch()
   
   const userLogin =(e)=>{
@@ -47,6 +47,7 @@ if(auth.authenticate){
                           </div>
                           <div className="d-flex justify-content-center">
                              <Button  className="my-auto top-btn mt-4" type="submit" variant="outline-dark">Se connecter</Button>
+                             <Link to="/register" ><Button  className="my-auto top-btn mt-4"  variant="outline-dark">Cree nouveaux compte </Button></Link>
                           </div>  
                       </Form>
               </Row>

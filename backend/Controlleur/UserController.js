@@ -1,6 +1,7 @@
 const USER = require('../Models/UserModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
+
  module.exports={
 register:async(req,res)=>{
 USER.findOne({email:req.body.email})
@@ -8,9 +9,9 @@ USER.findOne({email:req.body.email})
     if(user) return  res.status(400).json({
         message:'Email already been used'
     });
-    const salt = genSaltSync(10)
-     const hashedPassword =  bcrypt.hashSync(req.body.password, salt);
-     const password = hashedPassword;
+    // const salt = genSaltSync(10)
+    //  const hashedPassword =  bcrypt.hashSync(req.body.password);
+     const password = req.body.password;
     const fullName = req.body.fullName
     const adress=req.body.adress
     const email = req.body.email
@@ -41,8 +42,7 @@ signIn : (req, res) => {
     USER.findOne({ email: req.body.email }).exec(async (error, user) => {
       if (error) return res.status(400).json({ error });
       if (user) {
-        const isPassword = await bcrypt.compare(req.body.password,user.password);
-        if (isPassword ) {
+        if ( user.password == req.body.password ) {
             const token = jwt.sign({_id:user._id,role:user.role,fullName:user.fullName,adress:user.adress,email:user.email,phone:user.phone},'MEARNSECRET',{expiresIn:'1h'})
             res.status(200).json({
             token 
@@ -56,8 +56,34 @@ signIn : (req, res) => {
         return res.status(400).json({ message: "Something went wrong" });
       }
     });
+    
+  },
+  getuser: async (req, res) => {
+    try {
+      const users = await USER.find();
+      res.json(users);
+    } catch (error) {
+      console.error(error.message);
+    }
+  },
+
+  suppuser: async (req, res) => {
+    try {
+      const users = await USER.findByIdAndDelete(req.params.id);
+      res.json(users);
+    } catch (error) {
+      console.error(error.message);
+    }
+  },
+  putuser: async (req, res) => {
+    try {
+      const users = await USER.findByIdAndUpdate(
+        req.params.id,req.body,
+        { new: true}
+      );
+      res.json(users);
+    } catch (error) {
+      console.error(error.message);
+    }
   }
-
- 
-
 }
