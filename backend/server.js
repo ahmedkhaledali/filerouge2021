@@ -8,8 +8,12 @@ app.use(cors())
 const body=require('body-parser')
 app.use(express.json())
 
-
-
+//foyer
+const foyer = require('./Router/foyerRout')
+app.use('/app',foyer)
+//race
+const race = require('./Router/raceRoute')
+app.use('/app',race)
 //user
 const user = require('./Router/UserRoute')
 app.use('/app',user)

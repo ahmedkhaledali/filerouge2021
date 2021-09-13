@@ -44,9 +44,10 @@ const Upduser = ({el,id}) => {
   return(
     <div>
     <div className='container mt-5'>
-    <button  onClick={handleShow} ><i class="far fa-edit"></i> </button>
-
-
+   
+    <Button variant="primary" onClick={handleShow}>
+ Modifier votre compt
+      </Button>
 <Modal show={show} onHide={handleClose}>
 <Modal.Header closeButton>
 <Modal.Title className="title-modal">Information de mon chien</Modal.Title>

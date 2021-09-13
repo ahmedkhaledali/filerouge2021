@@ -19,7 +19,14 @@ import {useSelector,useDispatch} from 'react-redux'
 import {isUserLoggedIn} from './action/auth'
 import Foyer from './vieuxs/foyer';
 import Race from './vieuxs/race';
-
+import Raceuser from './vieuxs/raceuser';
+import Nserviceuser from './vieuxs/serviceuser';
+import Foyeruser from './vieuxs/foyeruser'
+import Dressageuser from './vieuxs/dressageuser'
+import Formecontactuser from './Composent/contactfromuser'
+import Acceuiluser from './vieuxs/Acceuiluser';
+import Contactuser from './vieuxs/contactuser'
+import PrivetRoute from './HOC/PrivetRoute'
 function App() {
 
   const dispatch = useDispatch()
@@ -48,10 +55,17 @@ function App() {
         <Route exact path="/service"><Nservice/></Route>
         <Route exact path="/connexion">< LoginForm/></Route>
         <Route exact path="/register">< RegisterUserForm/></Route>
-        <Route exact path="/profil"><UserProfil/></Route>
+        <PrivetRoute  path="/profil" component={UserProfil} /> 
         <Route exact path="/foyer"><Foyer/></Route>
         <Route exact path="/race"><Race/></Route>
-       
+
+        <Route exact path="/foyeruser"><Foyeruser/></Route>
+        <Route exact path="/raceuser"><Raceuser/></Route>
+        <Route exact path="/dressageuser"><Dressageuser/></Route>
+        <Route exact path="/serviceuser"><Nserviceuser/></Route>
+       <Route exact path ="/contactuser"><Contactuser /></Route>
+       <Route exact path="/Acceuiluser"><Acceuiluser /></Route>
+        
         
       </Switch>
     </BrowserRouter>

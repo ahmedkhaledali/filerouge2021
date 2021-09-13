@@ -56,7 +56,7 @@ export const deletechien = (id)=> async (dispatch) => {
 // update Menu
   export const updatechien = (id,nom,model,taille,critére,age,image,vaccin,date) => async dispatch => {
     try {
-      const res = await axios.put(`http://localhost:5003/app/update/${id}`,{nom,model,taille,critére,age,image,vaccin,date} ).then(res=> window.location.reload());
+      const res = await axios.put(`http://localhost:5003/app/updatechien/${id}`,{nom,model,taille,critére,age,image,vaccin,date} ).then(res=> window.location.reload());
     
       dispatch({
         type:  "APP_UPDATE_CHIEN", 

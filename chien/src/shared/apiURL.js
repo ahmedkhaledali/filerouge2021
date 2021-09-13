@@ -24,3 +24,19 @@ export const GET_CONTACT_API = `${SERVER_BASE_API}/getcontact`
 export const ADD_CONTACT_API = `${SERVER_BASE_API}/addcontact`
 // export const UPDATE_CONTACT_API = `${SERVER_BASE_API}/updatecontact/:id`
 export const DELETE_CONTACT_API = `${SERVER_BASE_API}/suppcontact/:id`
+
+
+//foyer
+
+export const GET_FOYER_API = `${SERVER_BASE_API}/getfoyer`
+export const ADD_FOYER_API = `${SERVER_BASE_API}/addfoyer`
+export const UPDATE_FOYER_API = `${SERVER_BASE_API}/update/:id`
+export const DELETE_FOYER_API = `${SERVER_BASE_API}/suppfoyer/:id`
+
+
+//race
+
+export const GET_RACE_API = `${SERVER_BASE_API}/getrace`
+export const ADD_RACE_API = `${SERVER_BASE_API}/addrace`
+export const UPDATE_RACE_API = `${SERVER_BASE_API}/updaterace/:id`
+export const DELETE_RACE_API = `${SERVER_BASE_API}/supprace/:id`

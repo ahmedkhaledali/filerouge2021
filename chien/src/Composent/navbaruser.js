@@ -25,20 +25,20 @@ function Navbareuser() {
       }
   };
   window.addEventListener('scroll', changeNavbarColor);
-  const dispatch=useDispatch()
-  const logout =()=> {dispatch(signout())}
+  
+  
 
-    return (
+    return ( 
       <div>
 <Navbar className="navbar1" fixed="top"  className={colorChange ? 'navbar1 colorChange' : 'navbar1'}>
 <Navbar.Brand><Image src={Logo} className={logoChange ? 'logo logoChange' : 'logo'}/></Navbar.Brand>
   <Navbar.Collapse id="navbarScroll">  
     <Nav className="mx-auto ">
-      <Link className="nav-link"  to="/">Acceuil</Link>
-      <Link  className="nav-link" to="/service">  Nos Services </Link>
-      <Link className="nav-link" to="/contact">  Contact </Link>
+      <Link className="nav-link"  to="/Acceuiluser">Acceuil</Link>
+      <Link  className="nav-link" to="/serviceuser">  Nos Services </Link>
+      <Link className="nav-link" to="/contactuser">  Contact </Link>
+      <Link className="nav-link" to="/profil">  Profil </Link>
     </Nav>
-   <Link className="nav-link" to="/connexion"> <button onClick={logout}> out </button></Link> 
   </Navbar.Collapse>
   
 </Navbar>

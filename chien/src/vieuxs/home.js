@@ -8,7 +8,8 @@ import { Redirect } from 'react-router-dom'
 import { FaKey } from "react-icons/fa"
 import { GrMail } from "react-icons/gr"
 import { Link } from "react-router-dom"
-
+import Navbare1 from '../Composent/Navbar1'
+import Footer from '../Composent/footer'
 const LoginForm = (props) => {
 
   const [email, setEmail] = useState('')
@@ -31,27 +32,33 @@ if(auth.authenticate){
   return <Redirect to={`/profil`} />
 }
 
+const ali = ()=>{
+  window.location.reload()
+}
   return (
-      <div>
+    
+      <div >
+        <Navbare1 />
           <h2 className="text-center mt-5 pt-4 connextion-title">CONNEXION</h2>    
-          <Container>
-              <Row>
-                      <Form className="form login-form mb-5" onSubmit={userLogin}>
+          
+              <Row className="bg-conx" >
+                      <Form className="form login-form mb-5 p-5" onSubmit={userLogin}>
                           <div className="d-flex mb-3">
-                            <GrMail  className="mr-2 mt-2 logo-login"/>
+                            
                             <Input  placeholder="Ecrivez votre email ici.." type="email" onChange={(e)=>{setEmail(e.target.value)}}/>
                           </div>
                           <div className="d-flex">
-                            <FaKey  className="mr-2 mt-2 logo-login"/>
+                            
                             <Input  placeholder="Ecrivez votre mot de passe ici.."  type="password" onChange={(e)=>{setPassword(e.target.value)}} />
                           </div>
                           <div className="d-flex justify-content-center">
-                             <Button  className="my-auto top-btn mt-4" type="submit" variant="outline-dark">Se connecter</Button>
-                             <Link to="/register" ><Button  className="my-auto top-btn mt-4"  variant="outline-dark">Cree nouveaux compte </Button></Link>
+                             <Button  className="my-auto top-btn mt-4" type="submit" variant="outline-dark" className="btn-conct"  >Se connecter</Button>
+                             <Link to="/register" ><Button  className="my-auto top-btn mt-4"  variant="outline-dark"  className="btn-regist">Cree nouveaux compte </Button></Link>
                           </div>  
                       </Form>
               </Row>
-          </Container>
+          
+          <Footer />
       </div>
   )
 }

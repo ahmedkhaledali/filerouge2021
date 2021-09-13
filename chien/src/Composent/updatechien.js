@@ -43,8 +43,10 @@ const Updchien = ({el,id}) => {
   return(
     <div>
     <div className='container mt-5'>
-    <button  onClick={handleShow} ><i class="far fa-edit"></i> </button>
-
+  
+    <Button variant="primary" onClick={handleShow}>
+ Modifier votre chien
+      </Button>
 
 <Modal show={show} onHide={handleClose}>
 <Modal.Header closeButton>

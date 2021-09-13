@@ -75,10 +75,11 @@ signIn : (req, res) => {
       console.error(error.message);
     }
   },
-  putuser: async (req, res) => {
+  putuser: async (req, res) => { 
     try {
       const users = await USER.findByIdAndUpdate(
-        req.params.id,req.body,
+        req.params.id,
+        req.body,
         { new: true}
       );
       res.json(users);

@@ -103,6 +103,8 @@ body {
     color: #787878;
     font-family: 'Merriweather', serif  ;
     font-weight: bold;
+    padding: 8rem;
+    
 }
 
 #more {display: none;}
@@ -366,12 +368,27 @@ ion-icon{
 
 
 .dash{
-    background-color: #d1ccc0;
+    background-color: #362526;
     text-align: center;
+    font-size: 25px;
+    color: white;
+    font-weight:bold;
+    font-family: 'Merriweather', serif ;
+}
+.nav-pills .nav-link.active{
+    background-color: #362526 !important;
+    margin-top: 5%;
+}
+.btn-primary{
+    background-color: #362526 !important;
+    border-color: #f6ab4a !important;
+    margin-left: 20%;
+    margin-top: 5%;
     
 }
+
 .side{
-    background-color: red;
+    background-color:#f6ab4a;
     height: 100%;
     position: fixed;
     width: 20%;
@@ -432,4 +449,190 @@ ion-icon{
 }
 .gga{
     margin-top: 15%;
+}
+.p-dressage{
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    margin-top: 9%;
+
+}
+.dressage-btn{
+    margin-left: 33%;
+    font-size: 22px;
+    color: white;
+    font-weight:bolder;
+    font-family: 'Merriweather', serif ;
+    background-color:#362526 ;
+    border-radius: 15px;
+    text-align: center;
+ 
+}
+.dressage-btn:hover{
+    background-color:#f6ab4a ;
+}
+.p-foyer{
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    margin-top: 9%;
+
+}
+.p-race{
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    margin-top: 9%;
+}
+.bg-dressage{
+    background-image: url("../src/images/dres.png");
+    background-position: center;
+    background-repeat: no-repeat;
+     background-size: 100% 83%;
+       
+}
+.t-dressage{
+    font-size: 56px;
+    color: #f6ab4a;
+    font-family: 'Merriweather', serif  ;
+    font-weight: bold;   
+    text-align: center;
+    margin-top: 10%;
+    
+}
+.hist-txt1{
+    font-size: 15px;
+    color: wheat;
+    font-family: 'Merriweather', serif  ;
+    font-weight: bold;
+    padding: 8rem;
+}
+.d-Entraineur{
+    font-size: 56px;
+    color: #f6ab4a;
+    font-family: 'Merriweather', serif  ;
+    font-weight: bold;
+    text-align: center ;
+}
+.card-dres{
+    background-color: transparent  !important;
+}
+.dr-bg{
+    background-image: url('./images/bg.jpg');
+    background-repeat: no-repeat;   
+    background-position:center ;
+    height: 100%;
+    margin-top: -10%;
+ 
+  }
+  .dr-coach{
+    font-size: 20px;
+    color: #f6ab4a;
+    font-family: 'Merriweather', serif  ;
+    font-weight: bold;
+    text-align: center ;
+    margin-top: 2%;
+  }
+  .bg-race{
+    background-image: url("../src/images/bg-race.png");
+    background-position: center;
+    background-repeat: no-repeat;
+     background-size: 100% 83%;
+       
+}
+.hist-txt2{
+    font-size: 15px;
+    color:#362526 ;
+    font-family: 'Merriweather', serif  ;
+    font-weight: bold;
+    padding: 8rem;
+    background-color: #f6ab4a;
+    border-radius: 50%;
+    text-align: center;
+}
+.bg-foyer{
+    background-image: url("../src/images/bg-foyer1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+     background-size: 100% 83%;
+       
+}
+
+
+
+
+.hist-txt3{
+    font-size: 15px;
+    color:#f6ab4a;
+    font-family: 'Merriweather', serif  ;
+    font-weight: bold;
+    padding: 8rem;
+    border :solid;
+    border-color: #362526;
+    border-radius: 50%;
+    
+}
+.txt-get{
+    background-color: whitesmoke;
+    font-size: 15px;
+    font-family: 'Merriweather', serif  ;
+    font-weight: bold;
+}
+.supprimer{
+    width: 50px;
+    height: 40px;
+    margin-top: 40%;
+    margin-left: 180%;
+}
+.btn-supp{
+    border: none;
+    background-color: transparent;
+}
+.txt-get-user{
+    background-color: whitesmoke;
+    font-size: 15px;
+    font-family: 'Merriweather', serif  ;
+    font-weight: bold;
+    text-align: center;
+    padding: 5%;
+}
+
+.bg-conx{
+    background-image: url("../src/images/contt11.png");
+    background-position: center;
+    background-repeat: no-repeat;
+     background-size: 100% 130%;
+           
+}
+.btn-conct{
+    margin-top: 11%;
+    margin-right: 64%;
+}
+.btn-regist{
+    
+    margin-top: 71%;
+    margin-left: -319%;
+
+}
+.connextion-title{
+    margin-top: 13% !important;
+    font-size: 50px;
+    color: #f6ab4a;
+    font-family: 'Merriweather', serif  ;
+    font-weight: bold;
+    text-align: center 
+}
+.img-regsitre{
+    box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  0 100px 80px rgba(0, 0, 0, 0.07)
+;
+
 }

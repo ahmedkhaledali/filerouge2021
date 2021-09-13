@@ -6,6 +6,10 @@ import {GET_COACH_API} from "./shared/apiURL"
 import {ADD_COACH_API} from "./shared/apiURL"
 import {GET_CONTACT_API} from "./shared/apiURL"
 import {ADD_CONTACT_API} from "./shared/apiURL"
+import {GET_FOYER_API} from "./shared/apiURL"
+import {ADD_FOYER_API} from "./shared/apiURL"
+import {GET_RACE_API} from "./shared/apiURL"
+import {ADD_RACE_API} from "./shared/apiURL"
 
 
 
@@ -82,3 +86,43 @@ export const fetchAddContact = (mail,commentaire) =>
 
 
 
+
+  //Getfoyer
+
+  export const fetchfoyer=()=>
+  Axios.get(GET_FOYER_API,{
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    }).then(res=>res.data)
+  
+  //Addfoyer
+    export const fetchAddfoyer = (nom,model,taille,critére,age,image,vaccin,date,datepre,datefin) =>
+    Axios.post(ADD_FOYER_API,{nom,model,taille,critére,age,image,vaccin,date,datepre,datefin}).then(res=>res.data)
+  
+  
+  //suppfoyer
+  
+  export const deletefoyer=(id)=> {
+    Axios.delete(`http://localhost:5003/app/suppfoyer/${id}`).then(res=>res.data)
+  }
+  
+
+  //Getrace
+
+  export const fetchrace=()=>
+  Axios.get(GET_RACE_API,{
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    }).then(res=>res.data)
+  
+  //Addrace
+    export const fetchAddrace = (nom,model,taille,critére,age,image,vaccin,date,couplerace) =>
+    Axios.post(ADD_RACE_API,{nom,model,taille,critére,age,image,vaccin,date,couplerace}).then(res=>res.data)
+  
+  
+  //supprace
+  
+  export const deleterace=(id)=> {
+    Axios.delete(`http://localhost:5003/app/supprace/${id}`).then(res=>res.data)
+  }
+  

@@ -1,4 +1,4 @@
-import { Container,Row,Form, Button } from 'react-bootstrap'
+import { Container,Row,Form, Button,Col } from 'react-bootstrap'
 import Input from "./input"
 import { signup} from '../action/registreuser'
 import {useDispatch,useSelector} from 'react-redux'
@@ -6,8 +6,10 @@ import {useState,useEffect} from 'react'
 import { Redirect } from 'react-router-dom'
 import { FaUserAlt, FaMapMarkerAlt, FaPhoneAlt, FaKey } from "react-icons/fa"
 import { GrMail } from "react-icons/gr"
-
-
+import Navbare1 from '../Composent/Navbar1'
+import Footer from '../Composent/footer'
+import Image from 'react-bootstrap/Image'
+import Image1 from '../images/18.jpg'
 const RegisterUserForm = (props) => {
 
    const [fullName, setFullName] = useState("");
@@ -54,9 +56,12 @@ const RegisterUserForm = (props) => {
 
    return (
        <div>
-           <h2 className="text-center mt-5 pt-4 connextion-title">INSCRIPTION</h2>    
+         <Navbare1 />
+          
            <Container>
                <Row>
+               <h2 className="text-center  pt-4 connextion-title">INSCRIPTION</h2>   
+                    <Col>
                        <Form className="form register-user-form mb-5" onSubmit={userSignup}>
                            <div className="d-flex mb-3">
                              
@@ -72,7 +77,7 @@ const RegisterUserForm = (props) => {
                              <Input  placeholder="Ecrivez votre adress ici.." type="text" onChange={(e)=>{setadress(e.target.value)}}/>
                            </div>
                            <div className="d-flex mb-3">
-                             <GrMail  className="mr-2 mt-2 logo-login"/>
+                            
                              <Input  placeholder="Ecrivez votre email ici.." type="email" onChange={(e)=>{setEmail(e.target.value)}}/>
                            </div>
                            <div className="d-flex">
@@ -83,9 +88,14 @@ const RegisterUserForm = (props) => {
                               <Button  className="my-auto top-btn mt-4" type="submit" variant="outline-dark">S'inscrire</Button>
                            </div>
                        </Form>
+                       </Col>
+                       <Col>
+                       <Image src={Image1} alt="" className="img-regsitre"  />
+                       
+                       </Col>
                </Row>
            </Container>
-           
+           <Footer />
        </div>
    )
  }

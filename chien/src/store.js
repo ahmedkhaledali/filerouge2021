@@ -7,6 +7,8 @@ import {userAuthReducer}  from "./reducer/userlog"
 import {UserRegisterReducer} from "./reducer/userReducer"
 import {CoachReducer} from "./reducer/coachReducer"
 import {ContactReducer} from "./reducer/contactReducer"
+import{RaceReducer} from "./reducer/raceReducer"
+import {FoyerReducer} from "./reducer/foyerReducer"
 
 const Reducers = combineReducers({
 
@@ -15,7 +17,10 @@ const Reducers = combineReducers({
   userlog :userAuthReducer,
     user:UserRegisterReducer,
     coach:CoachReducer,
-    contact:ContactReducer
+    contact:ContactReducer,
+foyer:FoyerReducer,
+race:RaceReducer
+
   });
   
   const store = createStore(Reducers,applyMiddleware(thunk));

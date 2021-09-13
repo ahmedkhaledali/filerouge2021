@@ -11,15 +11,21 @@ import Histoire from "../Composent/histoire";
 import Footer from "../Composent/footer";
 import Topnav from "../Composent/topnav";
 import Image from 'react-bootstrap/Image'
-import {getchien,deletechien} from "../action/chienaction"
+import {getchien,deletechien, updatechien} from "../action/chienaction"
 import {getuser,userdelete} from "../action/auth"
 import {getcoach,deletecoach} from "../action/coachaction"
 import {getcontact,deletecontact} from "../action/contactaction"
+import {getfoyer,deletfoyer} from "../action/foyeraction"
+import {getrace,deletrace} from "../action/raceaction"
 import {useEffect,useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import Updteuser from "../Composent/updatechien";
+import Updteuser from "../Composent/updateuser";
+import Updchien  from "../Composent/updatechien"
 import Ajoutcoach from "../Composent/Ajoutcoach";
 import Updcoach from "../Composent/updatecoach"
+import {BsTrashFill } from "react-icons/bs"
+import Updrace from "../Composent/updaterace";
+import Updfoyer from "../Composent/updatefoyer";
 function Dashborad  () {
 
 //getchien
@@ -84,6 +90,39 @@ const contactdelete =(id)=>{
   console.log("rr",(id))
 }
 
+//getfoyer
+const foyer = useSelector(state=>state.foyer)
+const dispatch4 = useDispatch()
+useEffect(() => {
+   dispatch4(getfoyer());
+ },[]);
+ console.log(foyer, "did we ?");
+
+//deletfoyer
+const foyerdelete =(id)=>{
+  dispatch (deletfoyer(id) )
+  console.log("rr",(id))
+}
+
+
+
+//getrace
+const race = useSelector(state=>state.race)
+const dispatch5 = useDispatch()
+useEffect(() => {
+   dispatch5(getrace());
+ },[]);
+ console.log(race, "did we ?");
+
+//deletrace0
+const racedelete =(id)=>{
+  dispatch (deletrace(id) )
+  console.log("rr",(id))
+}
+
+
+
+
 
   return (
     <div >
@@ -118,27 +157,28 @@ const contactdelete =(id)=>{
     <Col sm={9}>
       <Tab.Content>
         <Tab.Pane eventKey="first">
-          <h1 style={{textAlign:"center"}}>Les demandes </h1>
+          <h1 style={{textAlign:"center"}}>Les demandes dressage</h1>
         {chien.datas.map((el)=>(       
  <Row  className="justify-content-around p-5" >
   
  <Col>
- <Image src={el.image} alt="" style={{width:"100px",height:"100px"}}/>
+ <Image src={el.image} alt="" style={{width:"200px",height:"150px"}}/>
  </Col>
- <Col xs={5}>
+ <Col xs={5} className="txt-get">
 <p>Nom :{el.nom}</p> <br/>
 <p>Model :{el.model}</p> <br/>
 <p>Vaccineé : {el.vaccin}</p> <br/>
 <p>Age : {el.age}</p> <br/>
  </Col>
- <Col>
+ <Col className="txt-get">
  <p>Critére :{el.critére}</p> <br/>
  <p>Taille :{el.taille}</p> <br/>
  <p>Date :{el.date}</p> <br/>
- <button>Confirmation</button>
+ 
+ <Updchien  id={el._id} el={el}/>
+ <button className="btn-supp" onClick={() => chiendelete(el._id)} ><BsTrashFill  className="supprimer"/></button>
 
- <button onClick={() => chiendelete(el._id)}><img src="https://img.icons8.com/ios/30/000000/delete--v1.png"/></button>
-<Updteuser  id={el._id} el={el}/>
+
  </Col>
  
 <hr></hr>
@@ -148,24 +188,85 @@ const contactdelete =(id)=>{
 </Tab.Pane>
 
         <Tab.Pane eventKey="second">
+        <h1 style={{textAlign:"center"}}>Les demandes Race </h1>
+        {race.datarace.map((el)=>(       
+ <Row  className="justify-content-around p-5" >
+  
+ <Col>
+ <Image src={el.image} alt="" style={{width:"200px",height:"150px"}}/>
+ </Col>
+ <Col xs={5} className="txt-get">
+<p>Nom :{el.nom}</p> <br/>
+<p>Model :{el.model}</p> <br/>
+<p>Vaccineé : {el.vaccin}</p> <br/>
+<p>Age : {el.age}</p> <br/>
+ </Col>
+ <Col className="txt-get">
+ <p>Critére :{el.critére}</p> <br/>
+ <p>Taille :{el.taille}</p> <br/>
+ <p>Date :{el.date}</p> <br/>
+ <p>Couple de chien :{el.couplerace}</p> <br/>
+ 
+ 
+ <Updrace  id={el._id} el={el}/>
+ <button className="btn-supp" onClick={() => racedelete(el._id)} ><BsTrashFill  className="supprimer"/></button>
+
+
+ </Col>
+ 
+<hr></hr>
+</Row>
+
+))}
+
         </Tab.Pane>
         <Tab.Pane eventKey="third">
-          <Footer/>
+
+        <h1 style={{textAlign:"center"}}>Les demandes foyer </h1>
+        {foyer.datafoyer.map((el)=>(       
+ <Row  className="justify-content-around p-5" >
+  
+ <Col>
+ <Image src={el.image} alt="" style={{width:"200px",height:"150px"}}/>
+ </Col>
+ <Col xs={5} className="txt-get">
+<p>Nom :{el.nom}</p> <br/>
+<p>Model :{el.model}</p> <br/>
+<p>Vaccineé : {el.vaccin}</p> <br/>
+<p>Age : {el.age}</p> <br/>
+ </Col>
+ <Col className="txt-get">
+ <p>Critére :{el.critére}</p> <br/>
+ <p>Taille :{el.taille}</p> <br/>
+ <p>Date :{el.date}</p> <br/>
+ <p>Date pré:{el.datepre}</p> <br/>
+ <p>Date fin :{el.datefin}</p> <br/>
+ 
+ <Updfoyer   id={el._id} el={el}/>
+ <button className="btn-supp" onClick={() => foyerdelete(el._id)} ><BsTrashFill  className="supprimer"/></button>
+
+
+ </Col>
+ 
+<hr></hr>
+</Row>
+
+))}
+
         </Tab.Pane>
         <Tab.Pane eventKey="fourth">
         <h1 style={{textAlign:"center"}}>Les users </h1>
         {user.dataClient.map((el)=>(       
  <Row  className="justify-content-around p-5" >  
- <Col xs={5}>
+ <Col xs={5} className="txt-get" >
 <p>Nom :{el.fullName}</p> <br/>
 <p>adress :{el.adress}</p> <br/>
 <p>email : {el.email}</p> <br/>
 <p>phone: {el.phone}</p> <br/>
  </Col>
- <Col>
+ <Col className="txt-get">
  <p>role:{el.role}</p> <br/>
- <button>Confirmation</button>
- <button onClick={() => deleteuser(el._id)}><img src="https://img.icons8.com/ios/30/000000/delete--v1.png"/></button>
+ <button  className="btn-supp" onClick={() => deleteuser(el._id)}><BsTrashFill  className="supprimer"/></button>
  </Col>
 </Row>
 
@@ -178,16 +279,16 @@ const contactdelete =(id)=>{
  <Col>
  <Image src={el.image} alt="" style={{width:"100px",height:"100px"}}/>
  </Col>
- <Col xs={5}>
+ <Col xs={5} className="txt-get">
 <p>Nom :{el.nom}</p> <br/>
 <p>Prenom :{el.prenom}</p> <br/>
 <p>Email : {el.mail}</p> <br/>
 <p>Age : {el.age}</p> <br/>
  </Col>
- <Col>
+ <Col className="txt-get">
  <p>Carte Cin :{el.cin}</p> <br/>
  <p>Experience :{el.experience}</p> <br/>
- <button onClick={() => coachdelete(el._id)}><img src="https://img.icons8.com/ios/30/000000/delete--v1.png"/></button>
+ <button  className="btn-supp" onClick={() => coachdelete(el._id)}><BsTrashFill  className="supprimer"/></button>
 <Updcoach  id={el._id} el={el}/>
  </Col>
 </Row>
@@ -199,11 +300,11 @@ const contactdelete =(id)=>{
         <h1 style={{textAlign:"center"}}>Contacts </h1>
         {contacts.datacontact.map((el)=>(       
  <Row  className="justify-content-around p-5" >
- <Col xs={5}>
+ <Col xs={5} className="txt-get">
 <p>Mail :{el.mail}</p> <br/>
 <p>commentaire :{el.commentaire}</p> <br/>
  </Col>
- <button onClick={() => contactdelete(el._id)}><img src="https://img.icons8.com/ios/30/000000/delete--v1.png"/></button>
+ <button onClick={() => contactdelete(el._id)}><BsTrashFill /> </button>
 
 </Row>
 ))}
