@@ -4,35 +4,37 @@ import "../App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-import {useEffect,useState} from 'react';
+import {useEffect,useState,useSelector} from 'react';
 import Form from 'react-bootstrap/Form'
-import { Row,Col } from "react-bootstrap";
 import {addChien} from "../action/chienaction"
 import { useDispatch} from 'react-redux'
 
 
-function Modaldressage() {
+
+export default function Modalchien({id}) {
+
 
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
 /////////////////////////////////
 
+/////////////////////////////
 
 // récupération val input
 
 const [Input,setInput] = useState(
     {
       nom : "", 
-      model : "", 
-      vaccin:"",
+      model : "",
       taille : "",
       critére:"",
       age :"",
-      image : "",
-      date : ""
+      image : "", 
+      vaccin:"",
+      date : "",
+      id_client: ""
     }
   )
   const dispatch = useDispatch()
@@ -46,16 +48,17 @@ const [Input,setInput] = useState(
   //add 
   const HandelSubmit=(e)=>{
     e.preventDefault()
-     dispatch( addChien(Input.nom,Input.model,Input.vaccin,Input.taille,Input.age,Input.image,Input.date,Input.critére))
+
+     dispatch ( addChien (Input.nom,Input.model,Input.taille,Input.critére,Input.age,Input.image,Input.vaccin,Input.date,Input.id_client))
     
      console.log('val input', Input)
    }
   
-  
+
     return (
       <div>
  <Button variant="primary" onClick={handleShow}>
- Remplire formulaire de dressage de votre chien
+ Entrer votrer  chien 
       </Button>
 
       <Modal
@@ -64,11 +67,14 @@ const [Input,setInput] = useState(
         backdrop="static"
         keyboard={false}
       >
+
         <Modal.Header closeButton>
           <Modal.Title>Fichier de votre chien</Modal.Title>
         </Modal.Header>
+
+
         <Modal.Body>
-        <Form onSubmit={HandelSubmit}>
+        <Form >
   <Form.Group className="mb-3" controlId="formBasicNom">
     <Form.Label>Nom de chien</Form.Label>
     <Form.Control type="text" placeholder="Enter nom de chien" name="nom" onChange={HandelChange}/>
@@ -107,7 +113,7 @@ const [Input,setInput] = useState(
 
   <Form.Group className="mb-3" controlId="formBasicDate">
     <Form.Label>Date Dressage de chien</Form.Label>
-    <Form.Control type="text" placeholder="Enter la date " name="date" onChange={HandelChange}/>
+    <Form.Control type="date" placeholder="Enter la date " name="date" onChange={HandelChange}/>
   </Form.Group>
 
 
@@ -117,7 +123,19 @@ const [Input,setInput] = useState(
     <Form.Control type="text" placeholder="Enter la Critére de chien " name="critére" onChange={HandelChange}/>
   </Form.Group>
 
-  <Button variant="primary" type="submit">
+
+
+  <Form.Group className="mb-3" controlId="formBasicCheckbox3">
+  <Form.Label>Client_id</Form.Label>
+  
+    <Form.Control type="text"  name="id_client" onChange={HandelChange}/>
+  </Form.Group>
+
+  
+
+
+  
+  <Button variant="primary" type="submit" onClick={HandelSubmit}>
     Submit
   </Button>
 </Form>  
@@ -138,4 +156,3 @@ const [Input,setInput] = useState(
 </div>
     )
 }
-export default  Modaldressage;

@@ -65,13 +65,6 @@ const Updchien = ({el,id}) => {
     <Form.Control type="text" placeholder="Enter model de chien" name="model" defaultValue={el.model}  onChange={handleChange}/>
   </Form.Group>
 
-  <Form.Group className="mb-3" controlId="formBasicCheckbox1">
-  <Form.Label>Vaccineé</Form.Label>
-  <Form.Control type="text" placeholder="repondre Oui  ou bien Non" name="vaccin" defaultValue={el.vaccin}  onChange={handleChange}/>
-
-  
-  </Form.Group>
-
 
   <Form.Group className="mb-3" controlId="formBasicCheckbox2">
   <Form.Label>Taille</Form.Label>
@@ -79,10 +72,19 @@ const Updchien = ({el,id}) => {
 
   </Form.Group>
 
+
+  <Form.Group className="mb-3" controlId="formBasicCheckbox3">
+  <Form.Label>Critére</Form.Label>
+    <Form.Control type="text" placeholder="Enter la Critére de chien " name="critére" defaultValue={el.critére}  onChange={handleChange}/>
+  </Form.Group>
+
+
   <Form.Group className="mb-3" controlId="formBasicAge">
     <Form.Label>Age de chien</Form.Label>
     <Form.Control type="text" placeholder="Enter age de chien" name="age" defaultValue={el.age}  onChange={handleChange}/>
   </Form.Group>
+
+
 
 
   <Form.Group className="mb-3" controlId="formBasicImage">
@@ -91,17 +93,22 @@ const Updchien = ({el,id}) => {
   </Form.Group>
 
 
+  <Form.Group className="mb-3" controlId="formBasicCheckbox1">
+  <Form.Label>Vaccineé</Form.Label>
+  <Form.Control type="text" placeholder="repondre Oui  ou bien Non" name="vaccin" defaultValue={el.vaccin}  onChange={handleChange}/>
+
+  
+  </Form.Group>
+
+
+  
+
   <Form.Group className="mb-3" controlId="formBasicDate">
     <Form.Label>Date Dressage de chien</Form.Label>
     <Form.Control type="text" placeholder="Enter la date " name="date" defaultValue={el.date}  onChange={handleChange}/>
   </Form.Group>
 
 
-  <Form.Group className="mb-3" controlId="formBasicCheckbox3">
-  <Form.Label>Critére</Form.Label>
-  
-    <Form.Control type="text" placeholder="Enter la Critére de chien " name="critére" defaultValue={el.critére}  onChange={handleChange}/>
-  </Form.Group>
 
   <Button className="ms-3  mt-3" variant="secondary" onClick={handleClose}>  
 Close

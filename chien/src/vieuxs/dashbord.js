@@ -17,10 +17,11 @@ import {getcoach,deletecoach} from "../action/coachaction"
 import {getcontact,deletecontact} from "../action/contactaction"
 import {getfoyer,deletfoyer} from "../action/foyeraction"
 import {getrace,deletrace} from "../action/raceaction"
+import {getdressage,deletdressage} from "../action/dressageaction"
 import {useEffect,useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import Updteuser from "../Composent/updateuser";
-import Updchien  from "../Composent/updatechien"
+import Updatedressage from"../Composent/updatedressage"
 import Ajoutcoach from "../Composent/Ajoutcoach";
 import Updcoach from "../Composent/updatecoach"
 import {BsTrashFill } from "react-icons/bs"
@@ -122,6 +123,23 @@ const racedelete =(id)=>{
 
 
 
+//getdressage
+const dressage = useSelector(state=>state.dressage)
+const dispatch6 = useDispatch()
+useEffect(() => {
+   dispatch6(getdressage());
+ },[]);
+ console.log(dressage, "did we ?");
+
+//deletdressage
+const dressagedelete =(id)=>{
+  dispatch (deletdressage(id) )
+  console.log("rr",(id))
+}
+
+
+
+
 
 
   return (
@@ -151,32 +169,26 @@ const racedelete =(id)=>{
         <Nav.Item>
           <Nav.Link eventKey="sixth">Messagerie Contact</Nav.Link>
         </Nav.Item>
-
+        <Nav.Item>
+          <Nav.Link eventKey="seventh">Tous les chiens</Nav.Link>
+        </Nav.Item>
       </Nav>
     </Col>
     <Col sm={9}>
       <Tab.Content>
         <Tab.Pane eventKey="first">
-          <h1 style={{textAlign:"center"}}>Les demandes dressage</h1>
-        {chien.datas.map((el)=>(       
+   
+
+        <h1 style={{textAlign:"center"}}>Les demandes Dressage </h1>
+        {dressage.datadressage.map((el)=>(       
  <Row  className="justify-content-around p-5" >
-  
- <Col>
- <Image src={el.image} alt="" style={{width:"200px",height:"150px"}}/>
- </Col>
  <Col xs={5} className="txt-get">
-<p>Nom :{el.nom}</p> <br/>
-<p>Model :{el.model}</p> <br/>
-<p>Vaccineé : {el.vaccin}</p> <br/>
-<p>Age : {el.age}</p> <br/>
- </Col>
- <Col className="txt-get">
- <p>Critére :{el.critére}</p> <br/>
- <p>Taille :{el.taille}</p> <br/>
- <p>Date :{el.date}</p> <br/>
+<p>id_client :{el.id_client}</p> <br/>
+ <p>date de dressage :{el.date_dressage}</p> <br/>
+ <p>Confirmation :{el.resultat}</p> <br/>
  
- <Updchien  id={el._id} el={el}/>
- <button className="btn-supp" onClick={() => chiendelete(el._id)} ><BsTrashFill  className="supprimer"/></button>
+ <Updatedressage  id={el._id} el={el}/>
+ <button className="btn-supp" onClick={() => dressagedelete(el._id)} ><BsTrashFill  className="supprimer"/></button>
 
 
  </Col>
@@ -185,6 +197,14 @@ const racedelete =(id)=>{
 </Row>
 
 ))}
+
+
+
+
+
+
+
+
 </Tab.Pane>
 
         <Tab.Pane eventKey="second">
@@ -192,21 +212,11 @@ const racedelete =(id)=>{
         {race.datarace.map((el)=>(       
  <Row  className="justify-content-around p-5" >
   
- <Col>
- <Image src={el.image} alt="" style={{width:"200px",height:"150px"}}/>
- </Col>
  <Col xs={5} className="txt-get">
-<p>Nom :{el.nom}</p> <br/>
-<p>Model :{el.model}</p> <br/>
-<p>Vaccineé : {el.vaccin}</p> <br/>
-<p>Age : {el.age}</p> <br/>
- </Col>
- <Col className="txt-get">
- <p>Critére :{el.critére}</p> <br/>
- <p>Taille :{el.taille}</p> <br/>
- <p>Date :{el.date}</p> <br/>
- <p>Couple de chien :{el.couplerace}</p> <br/>
- 
+<p>id_client :{el.id_client}</p> <br/>
+ <p>date de race:{el.date_race}</p> <br/>
+ <p>model de couple  :{el.couplerace}</p> <br/>
+ <p>Confirmation :{el.resultat}</p> <br/>
  
  <Updrace  id={el._id} el={el}/>
  <button className="btn-supp" onClick={() => racedelete(el._id)} ><BsTrashFill  className="supprimer"/></button>
@@ -225,22 +235,12 @@ const racedelete =(id)=>{
         <h1 style={{textAlign:"center"}}>Les demandes foyer </h1>
         {foyer.datafoyer.map((el)=>(       
  <Row  className="justify-content-around p-5" >
-  
- <Col>
- <Image src={el.image} alt="" style={{width:"200px",height:"150px"}}/>
- </Col>
  <Col xs={5} className="txt-get">
-<p>Nom :{el.nom}</p> <br/>
-<p>Model :{el.model}</p> <br/>
-<p>Vaccineé : {el.vaccin}</p> <br/>
-<p>Age : {el.age}</p> <br/>
- </Col>
- <Col className="txt-get">
- <p>Critére :{el.critére}</p> <br/>
- <p>Taille :{el.taille}</p> <br/>
- <p>Date :{el.date}</p> <br/>
+
+ <p>Id_client:{el.id_client}</p> <br/>
  <p>Date pré:{el.datepre}</p> <br/>
  <p>Date fin :{el.datefin}</p> <br/>
+ <p>Coonfirmation :{el.resultat}</p> <br/>
  
  <Updfoyer   id={el._id} el={el}/>
  <button className="btn-supp" onClick={() => foyerdelete(el._id)} ><BsTrashFill  className="supprimer"/></button>
@@ -308,10 +308,38 @@ const racedelete =(id)=>{
 
 </Row>
 ))}
-
-
-
         </Tab.Pane>
+        <Tab.Pane eventKey="seventh">
+
+
+        <h1 style={{textAlign:"center"}}>Les chiens</h1>
+{chien.datas.map((el)=>(       
+<Row  className="justify-content-around p-5" >
+
+<Col>
+<Image src={el.image} alt="" style={{width:"200px",height:"150px"}}/>
+</Col>
+<Col xs={5} className="txt-get">
+<p>Nom :{el.nom}</p> <br/>
+<p>Model :{el.model}</p> <br/>
+<p>Vaccineé : {el.vaccin}</p> <br/>
+<p>Age : {el.age}</p> <br/>
+</Col>
+<Col className="txt-get">
+<p>Critére :{el.critére}</p> <br/>
+<p>Taille :{el.taille}</p> <br/>
+<p>Date :{el.date}</p> <br/>
+<p>Id_client:{el.id_client}</p>
+
+<button className="btn-supp" onClick={() => chiendelete(el._id)} ><BsTrashFill  className="supprimer"/></button>
+</Col>
+</Row>
+
+))}   
+
+</Tab.Pane>
+
+
       </Tab.Content>
     </Col>
   </Row>
@@ -321,3 +349,5 @@ const racedelete =(id)=>{
 }
 
 export default Dashborad;
+
+

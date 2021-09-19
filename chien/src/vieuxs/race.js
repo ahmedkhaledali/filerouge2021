@@ -2,20 +2,16 @@
 
 import Footer from '../Composent/footer';
 import Image from 'react-bootstrap/Image'
-import Image1 from '../images/1.jpg'
+import Image1 from '../images/race.jpeg'
+import Image2 from '../images/race1.jpeg'
+import Image3 from '../images/race3.jpg'
+import Image4 from '../images/race2.jpeg'
 import Modaldressage from '../Composent/modalchien'
 import Navbare1 from '../Composent/Navbar1';
 import {getcoach} from "../action/coachaction"
 import { useDispatch, useSelector } from 'react-redux'
 import {useEffect} from 'react';
 function Race() {
- //getcoach
-  const coachs = useSelector(state=>state.coach)
-  const dispatch = useDispatch()
-  useEffect(() => {
-     dispatch(getcoach());
-   },[]);
-   console.log(coachs, "did we ?");
 
   return ( 
     <div >
@@ -44,22 +40,15 @@ Voici un petit survol despersonnalités des races de chiens pour faire le bon ch
   </div>
 
    
-   
-   <div class="w3-container dr-bg">
+  <div class="w3-container dr-bg">
      <div className="row justify-content-around">
-   {coachs.datacoach.map((el)=>(  
-  <div class="card shadow p-3 mb-5  rounded card-dres" style={{width:"18rem",marginTop:"17%"}}>
-    <img src={el.image} alt="Alps" className="card-img-top" />
-    <div class="card-body dr-coach">
-    <p>Nom :{el.nom}</p> 
-<p>Prenom :{el.prenom}</p>  
- <p>Experience :{el.experience}</p> <br/>
-
-    </div>
-  </div>
-  ))}
+   <Image src={Image1} alt="niche" className="img-niche"/>
+   <Image src={Image2} alt="niche" className="img-niche"/>
+   <Image src={Image3} alt="niche" className="img-niche"/>
+   <Image src={Image4} alt="niche" className="img-niche"/>
    </div>
 </div>
+
 
    
    

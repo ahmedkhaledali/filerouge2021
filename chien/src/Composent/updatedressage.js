@@ -1,16 +1,16 @@
 import React from 'react'
 import {Form,Button,Modal} from "react-bootstrap"
 import {useState} from 'react';
-import {updatefoyer} from "../action/foyeraction"
-import {useDispatch} from 'react-redux'
 
-const Updfoyer = ({el,id}) => {
+import {useDispatch} from 'react-redux'
+import { updatedressage } from '../action/dressageaction';
+
+const Updatedressage = ({el,id}) => {
   const [update,setUpdate]=useState({id_client:el.id_client,
-    datepre:el.datepre,
-      datefin:el.datefin,
+    date_dressage:el.date_dressage,
       resultat:el.resultat
     })
-   
+    
   const dispatch = useDispatch()
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -30,8 +30,8 @@ const Updfoyer = ({el,id}) => {
     }
     // update Menu
 
-    const updfoyer=()=>{
-        dispatch (updatefoyer(id, update.id_client,update.datepre,update.datefin,update.resultat)) 
+    const upddressage=()=>{
+        dispatch (updatedressage(id,update.id_client,update.date_dressage,update.resultat)) 
         console.log("update",update)
         setShow(false)
         }
@@ -58,17 +58,12 @@ const Updfoyer = ({el,id}) => {
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicCheckbox3">
-  <Form.Label>Date pre</Form.Label>
+  <Form.Label>Date de dressage</Form.Label>
   
-    <Form.Control type="text" placeholder="Enter la date pre " name="datepre" defaultValue={el.datepre}  onChange={handleChange}/>
+    <Form.Control type="date"  name="date_dressage" defaultValue={el.date_dressage}  onChange={handleChange}/>
   </Form.Group>
 
 
-  <Form.Group className="mb-3" controlId="formBasicCheckbox3">
-  <Form.Label>Date fin</Form.Label>
-  
-    <Form.Control type="text" placeholder="Enter la date fin " name="datefin" defaultValue={el.datefin}  onChange={handleChange}/>
-  </Form.Group>
 
 
   <Form.Group className="mb-3" controlId="formBasicCheckbox3">
@@ -83,7 +78,7 @@ const Updfoyer = ({el,id}) => {
 Close
 </Button>
 
-<Button variant="dark" type="submit"  onClick={updfoyer} >valider</Button>
+<Button variant="dark" type="submit"  onClick={upddressage} >valider</Button>
 </Form>
 </Modal.Body>
 
@@ -96,4 +91,4 @@ Close
 
  }
 
-export default Updfoyer
+export default Updatedressage;

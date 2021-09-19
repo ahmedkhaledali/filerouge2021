@@ -19,9 +19,9 @@ export function getchien() {
 
 }
 
-export const addChien=(nom,model,taille,critére,age,image,vaccin,date)=> async (dispatch) =>{
+export const addChien=(nom,model,taille,critére,age,image,vaccin,date,id_client)=> async (dispatch) =>{
     try{
-        const res=await fetchAddChien (nom,model,taille,critére,age,image,vaccin,date);
+        const res=await fetchAddChien (nom,model,taille,critére,age,image,vaccin,date,id_client);
         dispatch ({
             type:"ADD_CHIEN_SUCCED",
             payload:res.data
@@ -54,7 +54,7 @@ export const deletechien = (id)=> async (dispatch) => {
 
 // 
 // update Menu
-  export const updatechien = (id,nom,model,taille,critére,age,image,vaccin,date) => async dispatch => {
+  export const updatechien = (id,nom,model,taille,critére,age,image,vaccin,date,) => async dispatch => {
     try {
       const res = await axios.put(`http://localhost:5003/app/updatechien/${id}`,{nom,model,taille,critére,age,image,vaccin,date} ).then(res=> window.location.reload());
     

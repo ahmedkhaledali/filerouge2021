@@ -3,7 +3,7 @@
 import Footer from '../Composent/footer';
 import Image from 'react-bootstrap/Image'
 import Image1 from '../images/1.jpg'
-import Modaldressage from '../Composent/modalchien'
+import Modaldressage from '../Composent/modaledressage'
 import Navbare1 from '../Composent/Navbar1';
 import {getcoach} from "../action/coachaction"
 import { useDispatch, useSelector } from 'react-redux'
@@ -64,7 +64,7 @@ ils obéissent aux codes de communication et d’appréhension du monde de leur 
    
    
    
-         <Modaldressage />
+        <Modaldressage />
 </div>
 
       <Footer />

@@ -18,9 +18,9 @@ export function getfoyer() {
 
 }
 
-export const addfoyer=(nom,model,taille,critére,age,image,vaccin,date,datepre,datefin)=> async (dispatch) =>{
+export const addfoyer=(id_client,datepre,datefin,resultat)=> async (dispatch) =>{
     try{
-        const res=await fetchAddfoyer (nom,model,taille,critére,age,image,vaccin,date,datepre,datefin);
+        const res=await fetchAddfoyer (id_client,datepre,datefin,resultat);
         dispatch ({
             type:"ADD_FOYER_SUCCED",
             payload:res.data
@@ -53,9 +53,9 @@ export const deletfoyer = (id)=> async (dispatch) => {
 
 // 
 // update Menu
-  export const updatefoyer = (id,nom,model,taille,critére,age,image,vaccin,date,datepre,datefin) => async dispatch => {
+  export const updatefoyer = (id,id_client,datepre,datefin,resultat) => async dispatch => {
     try {
-      const res = await axios.put(`http://localhost:5003/app/updatefoyer/${id}`,{nom,model,taille,critére,age,image,vaccin,date,datepre,datefin} ).then(res=> window.location.reload());
+      const res = await axios.put(`http://localhost:5003/app/updatefoyer/${id}`,{id_client,datepre,datefin,resultat} ).then(res=> window.location.reload());
     
       dispatch({
         type:  "APP_UPDATE_FOYER", 

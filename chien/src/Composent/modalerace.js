@@ -25,15 +25,10 @@ function Modalrace() {
 
 const [Input,setInput] = useState(
     {
-      nom : "", 
-      model : "", 
-      vaccin:"",
-      taille : "",
-      critére:"",
-      age :"",
-      image : "",
-      date : "",
-      couplerace:""
+      id_client: "", 
+      couplerace:"",
+      date_race:"",
+      resultat:""
     }
   )
   const dispatch = useDispatch()
@@ -47,7 +42,7 @@ const [Input,setInput] = useState(
   //add 
   const HandelSubmit=(e)=>{
     e.preventDefault()
-     dispatch( addrace(Input.nom,Input.model,Input.vaccin,Input.taille,Input.age,Input.image,Input.date,Input.critére,Input.couplerace))
+     dispatch( addrace(Input.id_client,Input.couplerace,Input.date_race,Input.resultat))
     
      console.log('val input', Input)
    }
@@ -56,7 +51,7 @@ const [Input,setInput] = useState(
     return (
       <div>
  <Button variant="primary" onClick={handleShow}>
- Remplire formulaire de Race de votre chien
+ Remplire formulaire date de Race de votre chien
       </Button>
 
       <Modal
@@ -66,62 +61,32 @@ const [Input,setInput] = useState(
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Fichier de votre chien</Modal.Title>
+          <Modal.Title>date de votre chien pour Race</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <Form onSubmit={HandelSubmit}>
   <Form.Group className="mb-3" controlId="formBasicNom">
-    <Form.Label>Nom de chien</Form.Label>
-    <Form.Control type="text" placeholder="Enter nom de chien" name="nom" onChange={HandelChange}/>
+    <Form.Label>Id_client</Form.Label>
+    <Form.Control type="text" placeholder="Enter id client" name="id_client" onChange={HandelChange}/>
+ 
   </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicCheckbox1">
+  <Form.Label>couple de race de votre chien</Form.Label>
+  <Form.Control type="text" placeholder="Entrer couple de race" name="couplerace" onChange={HandelChange}/>  
+  </Form.Group>
+
 
   <Form.Group className="mb-3" controlId="formBasicModel">
-    <Form.Label>Model de chien</Form.Label>
-    <Form.Control type="text" placeholder="Enter model de chien" name="model" onChange={HandelChange}/>
+    <Form.Label>Date_race</Form.Label>
+    <Form.Control type="date"  name="date_race" onChange={HandelChange}/>
   </Form.Group>
 
-  <Form.Group className="mb-3" controlId="formBasicCheckbox1">
-  <Form.Label>Vaccineé</Form.Label>
-  <Form.Control type="text" placeholder="repondre Oui  ou bien Non" name="vaccin" onChange={HandelChange}/>
-
-  
-  </Form.Group>
-
-
-  <Form.Group className="mb-3" controlId="formBasicCheckbox2">
-  <Form.Label>Taille</Form.Label>
-  <Form.Control type="text" placeholder="Enter taille de chien" name="taille" onChange={HandelChange}/>
-
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicAge">
-    <Form.Label>Age de chien</Form.Label>
-    <Form.Control type="text" placeholder="Enter age de chien" name="age" onChange={HandelChange}/>
-  </Form.Group>
-
-
-  <Form.Group className="mb-3" controlId="formBasicImage">
-    <Form.Label>Image de chien</Form.Label>
-    <Form.Control type="text" placeholder="Enter image de chien" name="image" onChange={HandelChange}/>
-  </Form.Group>
-
-
-  <Form.Group className="mb-3" controlId="formBasicDate">
-    <Form.Label>Date Dressage de chien</Form.Label>
-    <Form.Control type="text" placeholder="Enter la date " name="date" onChange={HandelChange}/>
-  </Form.Group>
 
 
   <Form.Group className="mb-3" controlId="formBasicCheckbox3">
-  <Form.Label>Critére</Form.Label>
+  <Form.Label>Attende la confirmation  </Form.Label>
   
-    <Form.Control type="text" placeholder="Enter la Critére de chien " name="critére" onChange={HandelChange}/>
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicCheckbox3">
-  <Form.Label>Couple de race</Form.Label>
-  
-    <Form.Control type="text" placeholder="Enter la couple de chien " name="couplerace" onChange={HandelChange}/>
+    <Form.Control type="text" placeholder="Attend la confimation" name="resultat" onChange={HandelChange}/>
   </Form.Group>
 
   

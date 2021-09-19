@@ -40,3 +40,10 @@ export const GET_RACE_API = `${SERVER_BASE_API}/getrace`
 export const ADD_RACE_API = `${SERVER_BASE_API}/addrace`
 export const UPDATE_RACE_API = `${SERVER_BASE_API}/updaterace/:id`
 export const DELETE_RACE_API = `${SERVER_BASE_API}/supprace/:id`
+
+//dressage
+
+export const GET_DRESSAGE_API = `${SERVER_BASE_API}/getdressage`
+export const ADD_DRESSAGE_API = `${SERVER_BASE_API}/adddressage`
+export const UPDATE_DRESSAGE_API = `${SERVER_BASE_API}/updatedressage/:id`
+export const DELETE_DRESSAGE_API = `${SERVER_BASE_API}/suppdressage/:id`

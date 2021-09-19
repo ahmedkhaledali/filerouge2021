@@ -9,6 +9,7 @@ postchien: async (req, res) => {
         const vaccin  =req.body.vaccin ;
         const date =req.body.date;
     const image =req.body.image;
+    const id_client=req.body.id_client;
         try {
           chiens = new chien({
             nom,
@@ -18,7 +19,9 @@ postchien: async (req, res) => {
             age,
             vaccin,
             date,
-            image
+            image,
+            id_client,
+    
           });
           await chiens.save();
           res.json(chiens);

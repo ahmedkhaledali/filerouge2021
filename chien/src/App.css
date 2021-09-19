@@ -525,8 +525,20 @@ ion-icon{
     background-repeat: no-repeat;   
     background-position:center ;
     height: 100%;
-    margin-top: -10%;
  
+  }
+  .img-niche{
+    width: 255px !important;
+    height: 200px;
+    margin-top: 2% !important;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07)
+  ;
   }
   .dr-coach{
     font-size: 20px;
@@ -591,13 +603,24 @@ ion-icon{
     border: none;
     background-color: transparent;
 }
-.txt-get-user{
+/* .txt-get-user{
     background-color: whitesmoke;
     font-size: 15px;
     font-family: 'Merriweather', serif  ;
     font-weight: bold;
     text-align: center;
     padding: 5%;
+} */
+.profil{
+    background-color:#362526 ;
+    font-weight: bold;
+    border: solid;
+    border-color: #cc884c;
+    border-radius: 10%;
+    color: wheat;
+    text-align: center;
+    width: 35%;
+    margin-left: 30%;
 }
 
 .bg-conx{
@@ -636,3 +659,4 @@ ion-icon{
 ;
 
 }
+

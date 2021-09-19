@@ -10,6 +10,8 @@ import {GET_FOYER_API} from "./shared/apiURL"
 import {ADD_FOYER_API} from "./shared/apiURL"
 import {GET_RACE_API} from "./shared/apiURL"
 import {ADD_RACE_API} from "./shared/apiURL"
+import {GET_DRESSAGE_API} from "./shared/apiURL"
+import {ADD_DRESSAGE_API} from "./shared/apiURL"
 
 
 
@@ -21,8 +23,8 @@ Axios.get(GET_CHIEN_API,{
   }).then(res=>res.data)
 
 
-  export const fetchAddChien = (nom,model,taille,critére,age,image,vaccin,date) =>
-  Axios.post(ADD_CHIEN_API,{nom,model,taille,critére,age,image,vaccin,date}).then(res=>res.data)
+  export const fetchAddChien = (nom,model,taille,critére,age,image,vaccin,date,id_client ) =>
+  Axios.post(ADD_CHIEN_API,{nom,model,taille,critére,age,image,vaccin,date,id_client }).then(res=>res.data)
 
 
 //
@@ -96,8 +98,8 @@ export const fetchAddContact = (mail,commentaire) =>
     }).then(res=>res.data)
   
   //Addfoyer
-    export const fetchAddfoyer = (nom,model,taille,critére,age,image,vaccin,date,datepre,datefin) =>
-    Axios.post(ADD_FOYER_API,{nom,model,taille,critére,age,image,vaccin,date,datepre,datefin}).then(res=>res.data)
+    export const fetchAddfoyer = (id_client,datepre,datefin,resultat) =>
+    Axios.post(ADD_FOYER_API,{id_client,datepre,datefin,resultat}).then(res=>res.data)
   
   
   //suppfoyer
@@ -116,13 +118,33 @@ export const fetchAddContact = (mail,commentaire) =>
     }).then(res=>res.data)
   
   //Addrace
-    export const fetchAddrace = (nom,model,taille,critére,age,image,vaccin,date,couplerace) =>
-    Axios.post(ADD_RACE_API,{nom,model,taille,critére,age,image,vaccin,date,couplerace}).then(res=>res.data)
+    export const fetchAddrace = ( id_client,couplerace,date_race,resultat) =>
+    Axios.post(ADD_RACE_API,{ id_client,couplerace,date_race,resultat}).then(res=>res.data)
   
   
   //supprace
   
   export const deleterace=(id)=> {
     Axios.delete(`http://localhost:5003/app/supprace/${id}`).then(res=>res.data)
+  }
+  
+
+  //Getdressage
+
+  export const fetchdressage=()=>
+  Axios.get(GET_DRESSAGE_API,{
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    }).then(res=>res.data)
+  
+  //Adddressage
+    export const fetchAdddressage = (id_client,date_dressage,resultat) =>
+    Axios.post(ADD_DRESSAGE_API,{id_client,date_dressage,resultat}).then(res=>res.data)
+  
+  
+  //suppdressage
+  
+  export const deletedressage=(id)=> {
+    Axios.delete(`http://localhost:5003/app/suppdressage/${id}`).then(res=>res.data)
   }
   

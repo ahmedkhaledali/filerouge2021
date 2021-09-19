@@ -6,8 +6,6 @@ const Schema = mongoose.Schema
         type:String,
        required:true,
        trim:true,
-       min:3,
-       max:20 ,
        index:true,
        lowercase:true
     },
@@ -15,19 +13,17 @@ const Schema = mongoose.Schema
         type:String,
         required:true,
         trim:true,
-        min:5,
-        max:20 
+        
     },
 
     adress:{
         type:String,
         required:true,
         trim:true,
-        min:5,
-        max:20 
+        
     },
     email:{
-         type:String, unique:true,
+         type:String, unique:true, 
          trim:true,
          lowercase:true
         
@@ -36,8 +32,7 @@ const Schema = mongoose.Schema
     password:{
         type:String,
         trim:true,
-        min:6,
-        max:20 
+        
     },
     role:{
         type:String,

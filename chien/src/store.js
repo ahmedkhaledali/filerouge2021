@@ -9,7 +9,7 @@ import {CoachReducer} from "./reducer/coachReducer"
 import {ContactReducer} from "./reducer/contactReducer"
 import{RaceReducer} from "./reducer/raceReducer"
 import {FoyerReducer} from "./reducer/foyerReducer"
-
+import {DressageReducer} from "./reducer/dressageReducer"
 const Reducers = combineReducers({
 
     chienstore : ChienReducer,
@@ -19,7 +19,8 @@ const Reducers = combineReducers({
     coach:CoachReducer,
     contact:ContactReducer,
 foyer:FoyerReducer,
-race:RaceReducer
+race:RaceReducer,
+dressage:DressageReducer
 
   });
   

@@ -1,4 +1,3 @@
-
 const express =require('express')
 const app = express()
 const db = require('./Config/db')
@@ -7,6 +6,11 @@ const cors= require('cors')
 app.use(cors())
 const body=require('body-parser')
 app.use(express.json())
+
+
+//dressage
+const dressage = require('./Router/dressageRoute')
+app.use('/app',dressage)
 
 //foyer
 const foyer = require('./Router/foyerRout')

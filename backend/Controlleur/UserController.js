@@ -11,12 +11,13 @@ USER.findOne({email:req.body.email})
     });
     // const salt = genSaltSync(10)
     //  const hashedPassword =  bcrypt.hashSync(req.body.password);
-     const password = req.body.password;
-    const fullName = req.body.fullName
-    const adress=req.body.adress
-    const email = req.body.email
-    const phone = req.body.phone
 
+    const fullName = req.body.fullName;
+    const email = req.body.email;
+    const phone = req.body.phone;
+    const password = req.body.password;
+    const adress=req.body.adress;
+    
     const _user = new USER({
         fullName,
         email,phone,password,adress
@@ -74,7 +75,7 @@ signIn : (req, res) => {
     } catch (error) {
       console.error(error.message);
     }
-  },
+  }, 
   putuser: async (req, res) => { 
     try {
       const users = await USER.findByIdAndUpdate(

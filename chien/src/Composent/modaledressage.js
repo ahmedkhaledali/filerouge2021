@@ -7,11 +7,11 @@ import Button from 'react-bootstrap/Button'
 import {useEffect,useState} from 'react';
 import Form from 'react-bootstrap/Form'
 import { Row,Col } from "react-bootstrap";
-import {addfoyer} from "../action/foyeraction"
+import {adddressage} from "../action/dressageaction"
 import { useDispatch} from 'react-redux'
 
 
-function Modalfoyer() {
+function Modaldressage() {
 
     const [show, setShow] = useState(false);
 
@@ -26,8 +26,7 @@ function Modalfoyer() {
 const [Input,setInput] = useState(
     {
       id_client:"", 
-      datepre:"",
-      datefin:"",
+      date_dressage:"",
       resultat:""
     }
   )
@@ -42,7 +41,7 @@ const [Input,setInput] = useState(
   //add 
   const HandelSubmit=(e)=>{
     e.preventDefault()
-     dispatch( addfoyer(Input.id_client,Input.datepre,Input.datefin,Input.resultat))
+     dispatch( adddressage(Input.id_client,Input.date_dressage,Input.resultat))
     
      console.log('val input', Input)
    }
@@ -51,7 +50,7 @@ const [Input,setInput] = useState(
     return (
       <div>
  <Button variant="primary" onClick={handleShow}>
- Remplire date de  foyer de votre chien
+ Remplire formulaire date de Race de votre chien
       </Button>
 
       <Modal
@@ -61,35 +60,30 @@ const [Input,setInput] = useState(
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Fichier de votre chien</Modal.Title>
+          <Modal.Title>date de dressage</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <Form onSubmit={HandelSubmit}>
   <Form.Group className="mb-3" controlId="formBasicNom">
-    <Form.Label>Id_Client</Form.Label>
-    <Form.Control type="text" placeholder="Enter Id Client" name="id_client" onChange={HandelChange}/>
+    <Form.Label>Id_client</Form.Label>
+    <Form.Control type="text" placeholder="Enter id client" name="id_client" onChange={HandelChange}/>
   </Form.Group>
 
-  <Form.Group className="mb-3" controlId="formBasicCheckbox3">
-  <Form.Label>Date pré</Form.Label>
-  
-    <Form.Control type="date" placeholder="Enter la date de pré " name="datepre" onChange={HandelChange}/>
+
+  <Form.Group className="mb-3" controlId="formBasicModel">
+    <Form.Label>Date_dressage</Form.Label>
+    <Form.Control type="date"  name="date_dressage" onChange={HandelChange}/>
   </Form.Group>
 
-  <Form.Group className="mb-3" controlId="formBasicCheckbox3">
-  <Form.Label>Date fin</Form.Label>
-  
-    <Form.Control type="date" placeholder="Enter la date de fin " name="datefin" onChange={HandelChange}/>
-  </Form.Group>
 
 
   <Form.Group className="mb-3" controlId="formBasicCheckbox3">
   <Form.Label>Attende la confirmation  </Form.Label>
   
-    <Form.Control type="text" placeholder="Attend la confimation " name="resultat" onChange={HandelChange}/>
+    <Form.Control type="text" placeholder="Attend la confimation" name="resultat" onChange={HandelChange}/>
   </Form.Group>
 
-
+  
 
   <Button variant="primary" type="submit">
     Submit
@@ -112,4 +106,4 @@ const [Input,setInput] = useState(
 </div>
     )
 }
-export default  Modalfoyer;
+export default  Modaldressage;

@@ -5,11 +5,14 @@ import Image from 'react-bootstrap/Image'
 import service from '../images/4.jpg'
 import Logo from '../LOGO/logo6.png'
 import {Link }from 'react-router-dom'
+import {useSelector} from 'react';
 
 
 
 
 function Service() {
+
+
   return (
       <div class="container">
     <div class="row text-center">

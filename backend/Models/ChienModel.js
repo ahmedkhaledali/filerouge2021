@@ -8,7 +8,9 @@ const chienShema = new Schema({
   age : { type: String, required: true },
   vaccin :{type: String, required: true },
   date :{type: String, required: true },
-  image :{type: String, required: true }
+  image :{type: String, required: true },
+  id_client :{type: String,required: true}
+  
 });
 
 module.exports = chiens = mongosse.model("chiens", chienShema);

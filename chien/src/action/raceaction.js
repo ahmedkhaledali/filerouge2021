@@ -18,9 +18,9 @@ export function getrace() {
 
 }
 
-export const addrace=(nom,model,taille,critére,age,image,vaccin,date,couplerace)=> async (dispatch) =>{
+export const addrace=(id_client,couplerace,date_race,resultat)=> async (dispatch) =>{
     try{
-        const res=await fetchAddrace (nom,model,taille,critére,age,image,vaccin,date,couplerace);
+        const res=await fetchAddrace (id_client,couplerace,date_race,resultat);
         dispatch ({
             type:"ADD_RACE_SUCCED",
             payload:res.data
@@ -53,9 +53,9 @@ export const deletrace = (id)=> async (dispatch) => {
 
 // 
 // update Menu
-  export const updaterace = (id,nom,model,taille,critére,age,image,vaccin,date,couplerace) => async dispatch => {
+  export const updaterace = (id,id_client,couplerace,date_race,resultat) => async dispatch => {
     try {
-      const res = await axios.put(`http://localhost:5003/app/updaterace/${id}`,{nom,model,taille,critére,age,image,vaccin,date,couplerace} ).then(res=> window.location.reload());
+      const res = await axios.put(`http://localhost:5003/app/updaterace/${id}`,{id_client,couplerace,date_race,resultat} ).then(res=> window.location.reload());
     
       dispatch({
         type:  "APP_UPDATE_RACE", 

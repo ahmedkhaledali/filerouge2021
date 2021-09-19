@@ -11,14 +11,7 @@ import {useEffect} from 'react';
 import Navbareuser from '../Composent/navbaruser'
 import Modalfoyer from '../Composent/modalefoyer';
 function Foyeruser() {
- //getcoach
-  const coachs = useSelector(state=>state.coach)
-  const dispatch = useDispatch()
-  useEffect(() => {
-     dispatch(getcoach());
-   },[]);
-   console.log(coachs, "did we ?");
-
+ 
   return (
     <div >
       
@@ -46,17 +39,7 @@ Lorsque vous devez vous séparer de votre chien temporairement,
    
    <div class="w3-container dr-bg">
      <div className="row justify-content-around">
-   {coachs.datacoach.map((el)=>(  
-  <div class="card shadow p-3 mb-5  rounded card-dres" style={{width:"18rem",marginTop:"17%"}}>
-    <img src={el.image} alt="Alps" className="card-img-top" />
-    <div class="card-body dr-coach">
-    <p>Nom :{el.nom}</p> 
-<p>Prenom :{el.prenom}</p>  
- <p>Experience :{el.experience}</p> <br/>
-
-    </div>
-  </div>
-  ))}
+   <p>ali</p>
    </div>
 </div>
 

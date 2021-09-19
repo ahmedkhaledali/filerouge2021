@@ -1,26 +1,17 @@
 const race =require('../Models/raceModel')
 module.exports={
 postrace: async (req, res) => {
-        const nom = req.body.nom;
-        const model = req.body.model;
-        const taille = req.body.taille;
-        const critére = req.body.critére;
-        const age = req.body.age;
-        const vaccin  =req.body.vaccin ;
-        const date =req.body.date;
-    const image =req.body.image;
+        const id_client =req.body.id_client;
     const couplerace =req.body.couplerace;
+    const date_race =req.body.date_race;
+    const resultat =req.body.resultat;
+    
         try {
           races = new race({
-            nom,
-            model,
-            taille,
-            critére,
-            age,
-            vaccin,
-            date,
-            image,
-            couplerace
+            id_client,
+            couplerace,
+            date_race,
+            resultat
           });
           await races.save();
           res.json(races);
