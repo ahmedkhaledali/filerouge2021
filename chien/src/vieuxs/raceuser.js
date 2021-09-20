@@ -2,7 +2,10 @@
 
 import Footer from '../Composent/footer';
 import Image from 'react-bootstrap/Image'
-import Image1 from '../images/1.jpg'
+import Image1 from '../images/race.jpeg'
+import Image2 from '../images/race1.jpeg'
+import Image3 from '../images/race3.jpg'
+import Image4 from '../images/race2.jpeg'
 import Modaldressage from '../Composent/modalchien'
 import Navbare1 from '../Composent/Navbar1';
 import {getcoach} from "../action/coachaction"
@@ -40,13 +43,14 @@ Voici un petit survol despersonnalités des races de chiens pour faire le bon ch
   
    
    
-
-   <div class="w3-container dr-bg">
+  <div class="w3-container dr-bg">
      <div className="row justify-content-around">
-   <p>ali</p>
+   <Image src={Image1} alt="niche" className="img-niche"/>
+   <Image src={Image2} alt="niche" className="img-niche"/>
+   <Image src={Image3} alt="niche" className="img-niche"/>
+   <Image src={Image4} alt="niche" className="img-niche"/>
    </div>
 </div>
-
    
    
    
@@ -54,8 +58,10 @@ Voici un petit survol despersonnalités des races de chiens pour faire le bon ch
    
        </div>
 
-      <Footer />
-    </div>
+       <div className="mt-4">
+<Footer />
+</div>
+     </div>
   );
 }
 

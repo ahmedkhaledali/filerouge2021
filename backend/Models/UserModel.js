@@ -1,12 +1,11 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
  const userSchema = new Schema({
-    googleId: String,
+    
     fullName:{
         type:String,
        required:true,
        trim:true,
-       index:true,
        lowercase:true
     },
     phone:{
@@ -23,7 +22,8 @@ const Schema = mongoose.Schema
         
     },
     email:{
-         type:String, unique:true, 
+         type:String,
+        unique:true, 
          trim:true,
          lowercase:true
         

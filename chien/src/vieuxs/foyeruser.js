@@ -2,7 +2,11 @@
 
 import Footer from '../Composent/footer';
 import Image from 'react-bootstrap/Image'
-import Image1 from '../images/1.jpg'
+import Image1 from '../images/niche.jpg'
+import Image2 from '../images/niche1.jpeg'
+import Image3 from '../images/niche2.jpg'
+import Image4 from '../images/niche3.jpg'
+
 import Modaldressage from '../Composent/modalchien'
 import Navbare1 from '../Composent/Navbar1';
 import {getcoach} from "../action/coachaction"
@@ -37,9 +41,12 @@ Lorsque vous devez vous séparer de votre chien temporairement,
   
    
    
-   <div class="w3-container dr-bg">
+  <div class="w3-container dr-bg">
      <div className="row justify-content-around">
-   <p>ali</p>
+   <Image src={Image1} alt="niche" className="img-niche"/>
+   <Image src={Image2} alt="niche" className="img-niche"/>
+   <Image src={Image3} alt="niche" className="img-niche"/>
+   <Image src={Image4} alt="niche" className="img-niche"/>
    </div>
 </div>
 
@@ -47,11 +54,13 @@ Lorsque vous devez vous séparer de votre chien temporairement,
    
    
    
-   
          <Modalfoyer />
 </div>
 
-      <Footer />
+<div className="mt-4">
+<Footer />
+</div>
+ 
     </div>
   );
 }

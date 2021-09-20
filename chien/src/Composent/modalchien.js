@@ -57,8 +57,8 @@ const [Input,setInput] = useState(
 
     return (
       <div>
- <Button variant="primary" onClick={handleShow}>
- Entrer votrer  chien 
+ <Button variant="primary btn-modal" onClick={handleShow}>
+ Entrer votre chien 
       </Button>
 
       <Modal

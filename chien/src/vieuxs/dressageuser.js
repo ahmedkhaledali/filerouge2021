@@ -67,7 +67,12 @@ ils obéissent aux codes de communication et d’appréhension du monde de leur 
         <Modaldressage />
 </div>
 
-      <Footer />
+<div className="mt-4">
+<Footer />
+</div>
+ 
+
+
     </div>
   );
 }

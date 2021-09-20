@@ -35,9 +35,9 @@ const Upduser = ({el,id}) => {
     // update Menu
 
     const uptuser=()=>{
-        dispatch (updateuser(id, update.fullName, update.phone,update.email ,update.password,update.role)) 
+        dispatch (updateuser(id, update.fullName, update.phone,update.adress,update.email ,update.password,update.role)) 
         console.log("update",update)
-        setShow(false)
+        
         }
 
 
@@ -54,7 +54,7 @@ const Upduser = ({el,id}) => {
 </Modal.Header>
 <Modal.Body>
 
-<Form   >
+<Form  onSubmit={uptuser}  >
   <Form.Group className="mb-3" controlId="formBasicNom">
     <Form.Label>Nom </Form.Label>
     <Form.Control type="text" placeholder="Enter votre nom" name="fullName" defaultValue={el.fullName}  onChange={handleChange}/>
@@ -89,7 +89,7 @@ const Upduser = ({el,id}) => {
 Close
 </Button>
 
-<Button variant="dark" type="submit"  onClick={uptuser} >valider</Button>
+<Button variant="dark" type="submit"  >valider</Button>
 </Form>
 </Modal.Body>
 

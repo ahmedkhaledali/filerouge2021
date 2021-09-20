@@ -9,7 +9,7 @@ function Histoire() {
     <div class="container-fluid">
         <div class="row">
 <div class="col-md-6">
-<Image src={Image1}  class="img-hist"/>
+<Image src={Image1}  class="img-hist img-fluid"/>
 </div>
 <div class="col-md-6 p-4 histoire">
     <p class="titre-txt">Notre Histoire</p>

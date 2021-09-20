@@ -19,7 +19,10 @@ function Acceuiluser() {
       <Service />
       <Temoi />
       <Chiens />
-      <Footer />
+      <div className="mt-4">
+<Footer />
+</div>
+ 
     </div>
   );
 }

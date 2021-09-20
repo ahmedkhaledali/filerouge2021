@@ -12,6 +12,7 @@ import {BsTrashFill } from "react-icons/bs"
 import {getfoyer,deletfoyer} from "../action/foyeraction"
 import {getrace,deletrace} from "../action/raceaction"
 import {getdressage,deletdressage} from "../action/dressageaction"
+import Footer from '../Composent/footer';
 
 
 export default function UserProfil (){
@@ -92,23 +93,22 @@ const dressagedelete =(id)=>{
                     <p>email : {auth.email}</p> <br/>
                     <p>phone: {auth.phone}</p> <br/>
                     <p>role:{auth.role}</p> <br/>
-{/* <Upduser id={auth._id} el={auth} /> */}
+<Upduser id={auth._id} el={auth} />
 <button className="btn btn-primary" onClick={logout}> out </button>
 </Col>
 
         {chien.datas.filter((el)=>
         el.id_client === auth._id
         ).map((el)=>(       
-            <Row>
-
-<Col>
- <Image src={el.image} alt="" style={{width:"200px",height:"150px"}}/>
+            <Row className="get-chien">
+ <Image src={el.image} alt="" style={{width:"200px",height:"150px",marginTop:"4%",marginLeft:"5%"}}/>
+<Col className="txt-chien">
 <p>Nom :{el.nom}</p> <br/>
 <p>Model :{el.model}</p> <br/>
 <p>Vaccineé : {el.vaccin}</p> <br/>
 <p>Age : {el.age}</p> <br/>
 </Col>
-<Col>
+<Col className="txt-chien">
  <p>Critére :{el.critére}</p> <br/>
  <p>Taille :{el.taille}</p> <br/>
  <p>Date :{el.date}</p> <br/>
@@ -118,14 +118,14 @@ const dressagedelete =(id)=>{
 </Col>
 </Row>
 ))}            
-<Modalchien id={auth._id}/>
+  <Modalchien />
 
-<h1 style={{textAlign:"center"}}>Les demandes foyer </h1>
+<p className="d-foyer">Les demandes foyer </p>
         {foyer.datafoyer.filter((el)=>
         el.id_client === auth._id)
         .map((el)=>(       
- <Row  className="justify-content-around p-5" >
- <Col xs={5} className="txt-get">
+ <Row  className="justify-content-around p-5 get-chien" >
+ <Col xs={5} className="txt-chien">
 
  <p>Id_client:{el.id_client}</p> <br/>
  <p>Date pré:{el.datepre}</p> <br/>
@@ -142,13 +142,13 @@ const dressagedelete =(id)=>{
 
 ))}
 
-<h1 style={{textAlign:"center"}}>Les demandes Race </h1>
+<p className="d-foyer">Les demandes Race </p>
         {race.datarace.filter((el)=>
         el.id_client === auth._id)
         .map((el)=>(       
- <Row  className="justify-content-around p-5" >
+ <Row  className="justify-content-around p-5 get-chien" >
   
- <Col xs={5} className="txt-get">
+ <Col xs={5} className="txt-chien">
 <p>id_client :{el.id_client}</p> <br/>
  <p>date de race:{el.date_race}</p> <br/>
  <p>model de couple  :{el.couplerace}</p> <br/>
@@ -162,12 +162,12 @@ const dressagedelete =(id)=>{
 ))}
 
 
-<h1 style={{textAlign:"center"}}>Les demandes Dressage </h1>
+<p className="d-foyer" >Les demandes Dressage </p>
         {dressage.datadressage.filter((el)=>
         el.id_client === auth._id)
         .map((el)=>(       
- <Row  className="justify-content-around p-5" >
- <Col xs={5} className="txt-get">
+ <Row  className="justify-content-around p-5 get-chien" >
+ <Col xs={5} className="txt-chien">
 <p>id_client :{el.id_client}</p> <br/>
  <p>date de dressage :{el.date_dressage}</p> <br/>
  <p>Confirmation :{el.resultat}</p> <br/>
@@ -181,11 +181,9 @@ const dressagedelete =(id)=>{
 </Row>
 
 ))}
-
-
-
-
-
+<div className="mt-4">
+<Footer />
+</div>
         </div>
     )
 }
